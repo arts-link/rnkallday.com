@@ -1,0 +1,40 @@
+{
+  "main": [
+    {
+      "title": "Email me",
+      "name": "email",
+      "icon": "fa-regular fa-envelope",
+      "link": "mailto:hello@arts-link.com?subject=web"
+    },
+    {
+      "title": "LinkedIn",
+      "name": "linkedin",
+      "icon": "fab fa-linkedin",
+      "link": "https://linkedin.com/in/rian-kochel"
+    },
+    {
+      "title": "Spotify",
+      "name": "spotify",
+      "icon": "fab fa-spotify",
+      "link": "https://open.spotify.com/artist/1kG5WKLiiKHwMBkzqiFybL?si=yUMc6Z4ASPKzUPsq3zs0CQ"
+    },
+    {
+      "title": "YouTube",
+      "name": "youtube",
+      "icon": "fab fa-youtube",
+      "link": "https://youtube.com/@therealbiffpowbang"
+    },
+    {
+      "title": "GitHub",
+      "name": "github",
+      "icon": "fab fa-github",
+      "link": "https://www.github.com/arts-link/"
+    },
+    {
+      "title": "RSS Feed",
+      "name": "feed",
+      "icon": "fa-solid fa-rss",
+      "link": "/ryder/index.xml"
+    }
+  ]
+}

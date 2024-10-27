@@ -6,7 +6,7 @@
   .main-menu-nav {
     .main-menu-ul {
       @apply bg-transparent;
-      @apply md:flex md:space-x-4;
+      @apply flex space-x-4;
       @apply w-full;
       @apply m-3;
       @apply text-nowrap;

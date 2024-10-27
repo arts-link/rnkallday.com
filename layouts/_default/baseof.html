@@ -4,7 +4,7 @@
   {{ partial "head.html" . }}
   
 </head>
-<body class="min-h-lvh bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 font-titillium bg-cover bg-center bg-no-repeat" style="background-image: url('/rnkallday.com/images/word-nerd.png');">
+<body class="min-h-lvh x text-neutral-900 font-titillium bg-cover bg-center bg-no-repeat" style="background-image: url('/rnkallday.com/images/word-nerd.png');">
   {{ if not hugo.IsProduction }} {{ partial "tw-size-indicator.html" . }} {{ end }}
     {{ $headerType := .Param "headerType" | default "" }}
     {{- partial (printf "header%s.html" $headerType) . }}

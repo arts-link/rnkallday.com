@@ -7,4 +7,5 @@ draft = true
 # tags = [""]
 # featured_image = ""
 # showTOC = true
+hideAsideBar = true
 +++

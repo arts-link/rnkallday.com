@@ -8,7 +8,7 @@
   {{ if not hugo.IsProduction }} {{ partial "tw-size-indicator.html" . }} {{ end }}
   {{ $headerType := .Param "headerType" | default "" }}
   {{- partial (printf "header%s.html" $headerType) . }}
-  <div class="flex flex-col container mx-auto bg-cover bg-center bg-repeat py-10" style="background-image: url('{{ site.BaseURL }}/images/word-nerd.png');">
+  <div class="flex flex-col mx-auto bg-cover bg-center bg-repeat py-10" style="background-image: url('{{ site.BaseURL }}/images/word-nerd.png');">
     {{- $alphaAlert := .Params.alphaAlert | default .Site.Params.alphaAlert -}}
     {{- with $alphaAlert }}
       <div id="banners" class="w-full mx-auto ">
@@ -22,15 +22,23 @@
         {{- end }}
       </div>
     {{- end }}
-    <main class="container max-h-max mx-auto ">
+    <main class="w-full max-h-max mx-auto {{ if .IsHome }}home{{ end }} ">
       {{ if not .IsHome }}
-      <div class="max-w-screen-xl mx-auto">
+      <div class="max-w-screen-xl w-full mx-auto">
         {{- partial "breadcrumb.html" . }}
       </div>
       {{ end }}
-      {{- block "main" . }}{{- end }}
+      <div class="w-full">
+        {{- block "main" . }}{{- end }}
+      </div>
+      <div class="w-full flex flex-row">
+        <div class="mx-auto rnk-nav">
+          {{- partial "menu-rnk.html" (dict "menuID" "main" "page" .) -}}
+        </div>
+      </div>
     </main>
   </div>
+      
   {{ partial "footer-rnk.html" . }}
   <i class="p-2 mx-auto block fa-solid fa-om"></i>
     

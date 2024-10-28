@@ -1,12 +1,25 @@
 /* RNK NAV */
-.main {
+main {
   @apply p-10;
-  div {
   header {
     h1 {
       @apply text-6xl;
     }
   }
+    p {
+      @apply text-2xl;
+    }
+}
+.home {
+  .articleBody {
+    h2 {
+      @apply text-6xl;
+      @apply text-center
+    }
+    p {
+      @apply text-2xl;
+      @apply text-center
+    }
   }
 }
 .articleBody {

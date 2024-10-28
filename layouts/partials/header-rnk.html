@@ -17,8 +17,10 @@ By default it will have a background gradient in cayan.
 {{- end -}}
 <header class=" w-full {{ $headerClass }}">
     <div class="m-3 rounded-lg flex flex-row {{ $headerBackgroundFrameInner }}">
+        {{ if not .IsHome }}
         <div class="mx-auto rnk-nav">
             {{- partial "menu-rnk.html" (dict "menuID" "main" "page" .) -}}
         </div>
+        {{ end}}
     </div>
 </header>

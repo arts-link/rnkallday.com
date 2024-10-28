@@ -18,7 +18,7 @@ module.exports = {
         "header-ryder": " url('/ryder/images/ryder-theme-og.webp')",
       },
       fontFamily: {
-        titillium: ["Titillium Web", ...defaultTheme.fontFamily.sans],
+        bebasneue: ["Bebas Neue", ...defaultTheme.fontFamily.sans],
       },
       screens: {
         'sm': '640px',

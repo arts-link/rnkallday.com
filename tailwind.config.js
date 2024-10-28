@@ -27,6 +27,13 @@ module.exports = {
         'xl': '1280px',
         '2xl': '1280',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#000000', // Set the color for the base font
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

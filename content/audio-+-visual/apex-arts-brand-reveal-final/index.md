@@ -8,8 +8,10 @@ date = 2024-10-28T13:30:44-07:00
 # featured_image = ""
 # showTOC = true
 hideAsideBar = true
+weight = 30
 +++
-## this project was part of a rebrand for a performing arts school. I contributed to the narrative, script, and audio production.
+
+this project was part of a rebrand for a performing arts school. I contributed to the narrative, script, and audio production.
 
 {{< youtube SjAQrMWnWNw >}}
 

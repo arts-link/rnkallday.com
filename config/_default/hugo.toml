@@ -44,7 +44,7 @@ paginate = 80
   [params.footer]
     tagCloud = true
   [params.twClasses]
-    headerBackgroundFrameOuter = " text-neutral-900"
+    # headerBackgroundFrameOuter = ""
     # headerBackgroundFrameInner = "bg-header-ryder h-[300px] bg-cover bg-left"
 
 # [menus]

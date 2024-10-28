@@ -8,7 +8,7 @@
   {{ if not hugo.IsProduction }} {{ partial "tw-size-indicator.html" . }} {{ end }}
   {{ $headerType := .Param "headerType" | default "" }}
   {{- partial (printf "header%s.html" $headerType) . }}
-  <div class="flex flex-col container mx-auto bg-cover bg-center bg-repeat py-20" style="background-image: url('{{ site.BaseURL }}/images/word-nerd.png');">
+  <div class="flex flex-col container mx-auto bg-cover bg-center bg-repeat py-10" style="background-image: url('{{ site.BaseURL }}/images/word-nerd.png');">
     {{- $alphaAlert := .Params.alphaAlert | default .Site.Params.alphaAlert -}}
     {{- with $alphaAlert }}
       <div id="banners" class="w-full mx-auto ">
@@ -32,7 +32,7 @@
     </main>
   </div>
   {{ partial "footer-rnk.html" . }}
-  <i class="p-2 fa-solid fa-om"></i>
+  <i class="p-2 mx-auto block fa-solid fa-om"></i>
     
 
 {{ if .Param "enabledebugpanel" }}

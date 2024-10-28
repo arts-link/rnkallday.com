@@ -16,13 +16,9 @@ By default it will have a background gradient in cayan.
 {{- $headerBackgroundFrameInner = . -}}
 {{- end -}}
 <header class=" w-full {{ $headerClass }}">
-<div class=" m-3 rounded-lg flex flex-row {{ $headerBackgroundFrameInner }}">
-    {{/*  <div class="mr-auto relative">
-        {{- partial "logo.html" . -}}
-    </div>  */}}
-    <div class="mx-auto rnk-nav">
-        {{- partial "menu.html" (dict "menuID" "main" "page" . "shade" "rose") -}}
+    <div class="m-3 rounded-lg flex flex-row {{ $headerBackgroundFrameInner }}">
+        <div class="mx-auto rnk-nav">
+            {{- partial "menu-rnk.html" (dict "menuID" "main" "page" .) -}}
+        </div>
     </div>
-
-</div>
 </header>

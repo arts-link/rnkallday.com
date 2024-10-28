@@ -1,7 +1,23 @@
 /* RNK NAV */
 .main {
   @apply p-10;
+  div {
+  header {
+    h1 {
+      @apply text-6xl;
+    }
+  }
+  }
 }
+.articleBody {
+  h2 {
+    @apply text-4xl;
+  }
+  p {
+    @apply text-xl;
+  }
+}
+
 .rnk-nav {
   .main-menu-nav {
     .main-menu-ul {
@@ -14,7 +30,6 @@
     }
     .main-menu-ul > li {
       @apply bg-neutral-900;
-      @apply border-b border-sky-800;
       @apply text-white;
       @apply p-5;
       @apply rounded-md;
@@ -26,7 +41,7 @@
     }
     .main-menu-child-ul {
      @apply ml-0 p-0;
-      @apply bg-neutral-900 rounded-lg cursor-pointer;
+     @apply bg-neutral-900 rounded-lg cursor-pointer;
     }
     .main-menu-child-ul > li {
       @apply border-b border-sky-800;

@@ -31,11 +31,13 @@
       <div class="w-full">
         {{- block "main" . }}{{- end }}
       </div>
+      {{ if .IsHome }}
       <div class="w-full flex flex-row">
         <div class="mx-auto rnk-nav">
           {{- partial "menu-rnk.html" (dict "menuID" "main" "page" .) -}}
         </div>
       </div>
+      {{ end }}
     </main>
   </div>
       

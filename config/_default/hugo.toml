@@ -33,6 +33,10 @@ paginate = 80
   logo_fontClass = 'font-titillium'
   repository = "https://github.com/arts-link/ryder"
   # articleBackgroundStyle = "bg-gradient-to-l from-blue-100 to-green-100 dark:from-blue-800 dark:to-green-800"
+  [params.ogImageText]
+    x = 50
+    y = 475
+    fontName = "opengraph-font"
   [params.shareButtons]
     networks = [ "twitter", "email", "reddit", "facebook" ]
     size = "small" # small, medium, large

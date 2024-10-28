@@ -7,6 +7,11 @@ date = 2024-10-26T23:23:32-07:00
 # tags = [""]
 # featured_image = ""
 # showTOC = true
+[cascade]
+  sectionTitle = "Choose Your Own Adventure"
+  homeFeatureIcon = "fa-solid fa-map-location-dot"
+  cardCategoryColorsDefault = "bg-gradient-to-r from-red-500 to-orange-500"
+  
 [menu]
  [menu.main]
   weight = 101

@@ -1,6 +1,6 @@
 +++
 title = 'Outtaluv'
-date = 2024-10-28T13:35:02-07:00
+date = 2024-10-28T13:28:10-07:00
 # draft = true
 # summary = ""
 # categories = [""]
@@ -8,8 +8,10 @@ date = 2024-10-28T13:35:02-07:00
 # featured_image = ""
 # showTOC = true
 hideAsideBar = true
+weight = 10
 +++
-## outtaluv
+
+outtaluv music video
 
 {{< youtube 8jYSjGJuXHk >}}
 

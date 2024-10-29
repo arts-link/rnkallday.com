@@ -1,18 +1,18 @@
 # !!! exampleSite only, set this to your own site URL
 baseURL= "localhost"
 languageCode= "en-us"
-title= "All Day Rian"
+title= "RNK All Day"
 theme= ["ryder"]
 summaryLength = 15
 enableRobotsTXT = true
 copyright = "©️ Rian Kochel 2024"
 enableEmoji = true
-enableGitInfo = true
-paginate = 80
+# enableGitInfo = true
+paginate = 12
 
 # !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
 [params]
-  description = 'A theme for hugo'
+  # description = 'A theme for hugo'
   TocOpen = true
   # UseHugoToc = true
   # enabledebugpanel = true 
@@ -25,13 +25,13 @@ paginate = 80
   showDarkToggle = false 
   showShareButtons = true
   loadLeaflet = true 
-  og_image_default = 'images/ryder-theme-og.webp'
+  og_image_default = 'common-partials/opengraph/opengraph-base.png'
   # homePageFeedHeader = "the new style"
   logo_firstWord = 'rnk'
   logo_lastWord = 'all-day'
-  # logo_tagline = "FOR HUGO WEBSITES"
+  logo_tagline = "CHOOSE YOUR OWN ADVENTURE"
   logo_fontClass = 'font-titillium'
-  repository = "https://github.com/arts-link/ryder"
+  repository = "https://github.com/arts-link/rnkallday.com"
   # articleBackgroundStyle = "bg-gradient-to-l from-blue-100 to-green-100 dark:from-blue-800 dark:to-green-800"
   [params.ogImageText]
     x = 50
@@ -43,8 +43,8 @@ paginate = 80
     icon = "solid" # normal, solid, circle, solidcircle
     buttonMargin = "0.2em"  
   [params.author]
-    email = 'ben@benstrawbridge.com'
-    name = 'Ben Strawbridge'
+    email = 'riankochel@gmail.com'
+    name = 'Rian Kochel'
   [params.footer]
     tagCloud = true
   [params.twClasses]

@@ -87,7 +87,6 @@
       "font-bebasneue",
       "font-bold",
       "font-semibold",
-      "from-blue-500",
       "from-orange-500",
       "from-red-500",
       "gap-6",
@@ -202,7 +201,6 @@
       "text-white",
       "text-xl",
       "text-yellow-400",
-      "to-green-500",
       "to-orange-500",
       "to-red-500",
       "top-0",
@@ -227,8 +225,6 @@
       "marketing-collateral",
       "misc",
       "please-reach-out-to-memailtoriankochelgmailcom-if-you-dont-see-the-examples-youre-looking-for",
-      "ride-west-filly",
-      "this-is-my-story-i-got-to-tell",
       "websites"
     ]
   }

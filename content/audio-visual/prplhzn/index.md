@@ -7,7 +7,7 @@ date = 2024-10-30T22:39:58-07:00
 # tags = [""]
 # featured_image = ""
 # showTOC = true
-homeFeatureIcon = "fab fa-spotify"
+homeFeatureIcon = "fab fa-soundcloud"
 
 hideAsideBar = true
 +++

@@ -9,7 +9,8 @@
     {{- if eq .Params.listRecursive true -}}
       {{- $myCollection = .RegularPagesRecursive -}}
     {{- end -}}
-    {{- $paginator := .Paginate ($myCollection) -}}
+    {{- $paginator := .Paginate (sort $myCollection "Date" "desc") }}
+    {{/*  {{- $paginator := .Paginate ($myCollection) -}}  */}}
     {{- range $paginator.Pages -}}
       {{- partial "card-category-color.html" . -}}
     {{- end -}}

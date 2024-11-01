@@ -12,7 +12,7 @@ paginate = 12
 
 # !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
 [params]
-  # description = 'A theme for hugo'
+  description = 'Choose your own adventure'
   TocOpen = true
   # UseHugoToc = true
   # enabledebugpanel = true 

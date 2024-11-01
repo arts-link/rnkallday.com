@@ -28,13 +28,8 @@
       {{ end }}
     </main>
   </div>
-      
   {{ partial "footer-rnk.html" . }}
   <i class="p-2 mx-auto block fa-solid fa-om"></i>
-    
-
-{{ if .Param "enabledebugpanel" }}
-{{ partial "debug-panel.html" . }}
-{{- end }}
+{{ if .Param "enabledebugpanel" }} {{ partial "debug-panel.html" . }} {{- end }}
 </body>
 </html>

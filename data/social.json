@@ -19,6 +19,13 @@
       "link": "https://open.spotify.com/artist/1kG5WKLiiKHwMBkzqiFybL?si=yUMc6Z4ASPKzUPsq3zs0CQ"
     },
     {
+      "title": "Soundcloud",
+      "name": "soundcloud",
+      "icon": "fab fa-soundcloud",
+      "link": "https://soundcloud.com/rian-kochel-280647786"
+    },
+    
+    {
       "title": "YouTube",
       "name": "youtube",
       "icon": "fab fa-youtube",

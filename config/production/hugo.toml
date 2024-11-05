@@ -1,6 +1,6 @@
 # PLACE ANY CONFIG HERE THAT IS ONLY FOR PRODUCTION ENVIRONMENT
 baseURL= "https://rnkallday.com"
 
-# [services]
-#   [services.googleAnalytics]
-#     ID = '<YOUR GTAG HERE>'
+[params]
+  plausible_domain = "rnkallday.com"
+  plausible_advanced = true

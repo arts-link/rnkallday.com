@@ -1,5 +1,5 @@
 # PLACE ANY CONFIG HERE THAT IS ONLY FOR PRODUCTION ENVIRONMENT
-baseURL= "https://arts-link.github.io/rnkallday.com"
+baseURL= "https://rnkallday.com"
 
 # [services]
 #   [services.googleAnalytics]

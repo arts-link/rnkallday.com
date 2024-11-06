@@ -1,7 +1,7 @@
 +++
 title = 'Ebook'
 date = 2024-11-06T16:11:21-05:00
-draft = true
+# draft = true
 # summary = ""
 # categories = [""]
 # tags = [""]

@@ -1,6 +1,6 @@
 /* RNK NAV */
 main {
-  @apply p-10;
+  @apply p-2;
   header {
     h1 {
       @apply text-6xl;

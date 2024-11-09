@@ -8,7 +8,6 @@ enableRobotsTXT = true
 copyright = "©️ Rian Kochel 2024"
 enableEmoji = true
 # enableGitInfo = true
-paginate = 12
 
 # !!! exampleSite only, you may need to delete the line: `themesDir: ../../` 
 [params]
@@ -51,7 +50,8 @@ paginate = 12
   [params.twClasses]
     # headerBackgroundFrameOuter = ""
     # headerBackgroundFrameInner = "bg-header-ryder h-[300px] bg-cover bg-left"
-
+[pagination]
+  pagerSize = 12 
 # [menus]
 # [[menus.main]]
 #     name = 'Tags'

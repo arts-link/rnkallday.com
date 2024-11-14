@@ -1,0 +1,39 @@
+description = 'Choose your own adventure'
+TocOpen = true
+# UseHugoToc = true
+# enabledebugpanel = true 
+# navbar_fixed = true
+excludedTags = ["excluded"]
+showDate = false 
+showAuthor = false 
+showHomeFeed = false 
+headerType = "-rnk"
+showDarkToggle = false 
+showShareButtons = true
+showReadOn = false
+loadLeaflet = false
+og_image_default = 'common-partials/opengraph/opengraph-base.png'
+# homePageFeedHeader = "the new style"
+logo_firstWord = 'rnk'
+logo_lastWord = 'all-day'
+logo_tagline = "CHOOSE YOUR OWN ADVENTURE"
+logo_fontClass = 'font-titillium'
+repository = "https://github.com/arts-link/rnkallday.com"
+# articleBackgroundStyle = "bg-gradient-to-l from-blue-100 to-green-100 dark:from-blue-800 dark:to-green-800"
+[ogImageText]
+  x = 50
+  y = 475
+  fontName = "opengraph-font"
+[shareButtons]
+  networks = [ "twitter", "email", "reddit", "facebook" ]
+  size = "small" # small, medium, large
+  icon = "solid" # normal, solid, circle, solidcircle
+  buttonMargin = "0.2em"  
+[author]
+  email = 'riankochel@gmail.com'
+  name = 'Rian Kochel'
+[footer]
+  tagCloud = true
+[twClasses]
+  # headerBackgroundFrameOuter = ""
+  # headerBackgroundFrameInner = "bg-header-ryder h-[300px] bg-cover bg-left"

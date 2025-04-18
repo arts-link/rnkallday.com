@@ -1,0 +1,128 @@
+<!-- Dark mode toggle script -->
+{{ if .Site.Params.showDarkToggle }}
+<script>
+  // Function to set the theme
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+      document.getElementById('theme-toggle-dark-icon').classList.add('hidden');
+      document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+      if (document.getElementById('mobile-theme-toggle-dark-icon')) {
+        document.getElementById('mobile-theme-toggle-dark-icon').classList.add('hidden');
+        document.getElementById('mobile-theme-toggle-light-icon').classList.remove('hidden');
+      }
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
+      document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+      document.getElementById('theme-toggle-light-icon').classList.add('hidden');
+      if (document.getElementById('mobile-theme-toggle-dark-icon')) {
+        document.getElementById('mobile-theme-toggle-dark-icon').classList.remove('hidden');
+        document.getElementById('mobile-theme-toggle-light-icon').classList.add('hidden');
+      }
+    }
+  }
+
+  // Set initial state of toggle
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+
+  // Add event listeners to toggle buttons
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function() {
+        if (localStorage.theme === 'dark') {
+          setTheme('light');
+        } else {
+          setTheme('dark');
+        }
+      });
+    }
+
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', function() {
+        if (localStorage.theme === 'dark') {
+          setTheme('light');
+        } else {
+          setTheme('dark');
+        }
+      });
+    }
+
+    // Mobile menu toggle
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  });
+</script>
+{{ end }}
+
+<!-- Animation script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fade-in animation for elements with the 'fade-in' class
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    if (fadeElements.length > 0) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+      });
+    }
+    
+    // Slide-up animation for elements with the 'slide-up' class
+    const slideUpElements = document.querySelectorAll('.slide-up');
+    
+    if (slideUpElements.length > 0) {
+      const slideUpObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            slideUpObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      slideUpElements.forEach(element => {
+        slideUpObserver.observe(element);
+      });
+    }
+    
+    // Slide-down animation for elements with the 'slide-down' class
+    const slideDownElements = document.querySelectorAll('.slide-down');
+    
+    if (slideDownElements.length > 0) {
+      const slideDownObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            slideDownObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      slideDownElements.forEach(element => {
+        slideDownObserver.observe(element);
+      });
+    }
+  });
+</script>

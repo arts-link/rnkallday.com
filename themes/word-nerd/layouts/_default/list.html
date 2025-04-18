@@ -1,0 +1,56 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-12">
+  <header class="mb-12 text-center">
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4 slide-down">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto fade-in">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {{ range .Pages }}
+    <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 fade-in">
+      {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-48 object-cover">
+      {{ else }}
+      <div class="w-full h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+        <span class="text-gray-500 dark:text-gray-400">No Image</span>
+      </div>
+      {{ end }}
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{{ .Title }}</h2>
+        {{ if .Site.Params.showDate }}
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">{{ .Date.Format "January 2, 2006" }}</p>
+        {{ end }}
+        <p class="text-gray-700 dark:text-gray-300 mb-4">{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="text-turquoise hover:text-turquoise-700 font-medium">Read More →</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  {{ if .Paginator }}
+  <div class="mt-12 flex justify-center">
+    <nav aria-label="Pagination" class="inline-flex">
+      {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}" class="px-4 py-2 mx-1 text-gray-700 dark:text-gray-300 transition-colors duration-300 bg-white dark:bg-gray-800 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
+        Previous
+      </a>
+      {{ end }}
+      
+      {{ range .Paginator.Pagers }}
+      <a href="{{ .URL }}" class="px-4 py-2 mx-1 {{ if eq . $.Paginator }}text-white bg-turquoise hover:bg-turquoise-600{{ else }}text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700{{ end }} transition-colors duration-300 rounded-md">
+        {{ .PageNumber }}
+      </a>
+      {{ end }}
+      
+      {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}" class="px-4 py-2 mx-1 text-gray-700 dark:text-gray-300 transition-colors duration-300 bg-white dark:bg-gray-800 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
+        Next
+      </a>
+      {{ end }}
+    </nav>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

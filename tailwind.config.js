@@ -7,30 +7,62 @@ module.exports = {
     "./layouts/**/*.html",
     "./config/**/*.toml",
     "./content/**/*.md",
-    "./../../themes/ryder/layouts/**/*.html",
+    "./themes/word-nerd/layouts/**/*.html",
   ],
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        turquoise: {
+          DEFAULT: '#6BE5D8',
+          50: '#FFFFFF',
+          100: '#FFFFFF',
+          200: '#DFFAF7',
+          300: '#B7F3EC',
+          400: '#91ECE2',
+          500: '#6BE5D8',
+          600: '#39DBC9',
+          700: '#22C3B2',
+          800: '#1A9589',
+          900: '#13675F',
+          950: '#0F504A'
+        },
+      },
       backgroundImage: {
-        "hidden-home": " url('/ryder/images/hidden-home-cover.webp')",
-        "header-sunset-mb": " url('/ryder/images/hidden-home-cover.webp')",
-        "header-ryder": " url('/ryder/images/ryder-theme-og.webp')",
+        "hero-video": "url('/images/hero-bg.webp')",
       },
       fontFamily: {
-        bebasneue: ["Bebas Neue", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        display: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
       screens: {
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
-        '2xl': '1280',
+        '2xl': '1536px',
       },
       typography: {
         DEFAULT: {
           css: {
-            color: '#000000', // Set the color for the base font
+            color: '#333333',
+            a: {
+              color: '#6BE5D8',
+              '&:hover': {
+                color: '#39DBC9',
+              },
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: '#f3f4f6',
+            a: {
+              color: '#6BE5D8',
+              '&:hover': {
+                color: '#91ECE2',
+              },
+            },
           },
         },
       },

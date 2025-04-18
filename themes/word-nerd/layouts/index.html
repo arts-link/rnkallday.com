@@ -1,0 +1,147 @@
+{{ define "main" }}
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <!-- Video Background -->
+  <div class="absolute inset-0 z-0">
+    <video 
+      class="w-full h-full object-cover"
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      poster="/images/hero-bg.webp"
+    >
+      <source src="/videos/hero-video.mp4" type="video/mp4">
+      <!-- Fallback image displayed if video doesn't load -->
+      Your browser does not support the video tag.
+    </video>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70"></div>
+  </div>
+  
+  <!-- Hero Content -->
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 fade-in">
+      <span class="text-turquoise">Word</span> Nerd
+    </h1>
+    <p class="text-xl md:text-2xl text-white mb-8 fade-in">
+      A portfolio of multimedia work by Rian Kochel
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 slide-up">
+      <a href="/about/" class="bg-turquoise hover:bg-turquoise-600 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+        Learn About Me
+      </a>
+      <a href="/work/" class="bg-transparent hover:bg-white/10 text-white border-2 border-white py-3 px-6 rounded-lg transition-colors duration-300">
+        View My Work
+      </a>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 fade-in">
+    <div class="animate-bounce">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white slide-up">Welcome to My Creative World</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 slide-up">
+        I'm a multimedia storyteller passionate about crafting compelling narratives through writing, audio, and visual mediums. 
+        My work spans across various formats, always with a focus on clear communication and engaging experiences.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <!-- Idea Mechanic -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md fade-in">
+          <div class="text-turquoise mb-4">
+            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Idea Mechanic</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Crafting and refining concepts into well-structured, impactful narratives.
+          </p>
+        </div>
+        
+        <!-- Digital Alchemist -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md fade-in">
+          <div class="text-turquoise mb-4">
+            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.168 1.168a4 4 0 00-2.366.861l-.29-.29a3 3 0 00-2.12-.879H8v-2.172a3 3 0 00-.879-2.12L6 6.828a4 4 0 002.366-.861l.29.29a3 3 0 002.12.879z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Digital Alchemist</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Transforming raw content into engaging digital experiences across multiple platforms.
+          </p>
+        </div>
+        
+        <!-- Sherpa to the Luddites -->
+        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md fade-in">
+          <div class="text-turquoise mb-4">
+            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Sherpa to the Luddites</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Guiding non-technical audiences through complex digital landscapes with clarity and patience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Work Section -->
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white slide-up">Featured Work</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Featured items will be populated here -->
+      {{ range first 3 (where .Site.RegularPages "Section" "in" (slice "written-words" "audio-visual")) }}
+      <div class="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 fade-in">
+        {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-48 object-cover">
+        {{ else }}
+        <div class="w-full h-48 bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+          <span class="text-gray-500 dark:text-gray-400">No Image</span>
+        </div>
+        {{ end }}
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{{ .Title }}</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">{{ .Summary }}</p>
+          <a href="{{ .Permalink }}" class="text-turquoise hover:text-turquoise-700 font-medium">Read More →</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="/work/" class="inline-block bg-turquoise hover:bg-turquoise-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition-colors duration-300 slide-up">
+        View All Work
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="py-20 bg-gray-900 text-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 slide-up">Let's Work Together</h2>
+    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto slide-up">
+      Have a project in mind or want to discuss potential collaborations? I'd love to hear from you.
+    </p>
+    <a href="/contact/" class="inline-block bg-turquoise hover:bg-turquoise-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition-colors duration-300 slide-up">
+      Get in Touch
+    </a>
+  </div>
+</section>
+{{ end }}

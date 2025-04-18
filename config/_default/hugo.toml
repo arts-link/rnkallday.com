@@ -1,14 +1,12 @@
-# !!! exampleSite only, set this to your own site URL
-baseURL= "localhost"
+baseURL= "https://rnkallday.com/"
 languageCode= "en-us"
-title= "RNK All Day"
-theme= ["ryder"]
+title= "Word Nerd: A portfolio of multimedia work by Rian Kochel"
+theme= ["word-nerd"]
 summaryLength = 15
 enableRobotsTXT = true
 copyright = "©️ Rian Kochel 2024"
 enableEmoji = true
-# enableGitInfo = true
+enableGitInfo = true
 
 [pagination]
-  pagerSize = 12 
-  
+  pagerSize = 12

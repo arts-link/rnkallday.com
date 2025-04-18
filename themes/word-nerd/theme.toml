@@ -1,0 +1,12 @@
+name = "Word Nerd"
+license = "MIT"
+licenselink = "https://github.com/arts-link/rnkallday.com/blob/main/LICENSE"
+description = "A modern, responsive Hugo theme for Rian Kochel's portfolio"
+homepage = "https://rnkallday.com/"
+tags = ["portfolio", "responsive", "multimedia", "tailwindcss", "dark mode"]
+features = ["responsive", "tailwindcss", "dark mode", "multimedia", "animations"]
+min_version = "0.80.0"
+
+[author]
+  name = "Rian Kochel"
+  homepage = "https://rnkallday.com/"

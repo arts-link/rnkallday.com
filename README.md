@@ -1,6 +1,6 @@
 [![rnk all day build status](https://github.com/arts-link/rnkallday.com/actions/workflows/hugo.yml/badge.svg)](https://arts-link.github.io/rnkallday.com/)
 
-## T1. Overview
+1. Overview
 Project: 
 A Hugo-Based Portfolio Overhaul
 Title:
@@ -89,7 +89,6 @@ Final site hosted on GitHub Pages. Follow best practices for configuring a repos
 
 
 
-o create new content
 
 ```bash
 # single story, the `index.md` utilizes the single template.

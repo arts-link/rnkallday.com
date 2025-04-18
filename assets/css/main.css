@@ -1,0 +1,7 @@
+/* Import Tailwind CSS */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Import theme CSS */
+@import "/themes/word-nerd/assets/css/main.css";

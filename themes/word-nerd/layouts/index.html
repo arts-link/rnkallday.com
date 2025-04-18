@@ -2,19 +2,16 @@
 <section class="relative h-screen flex items-center justify-center overflow-hidden bg-black dark:bg-white">
   <!-- Hero Background -->
   <div class="absolute inset-0 z-0">
-    <!-- Video Background -->
+    <!-- YouTube Background instead of local video -->
     <div class="absolute inset-0 flex items-center justify-center">
       <div class="relative w-4/5 md:w-3/5 lg:w-2/5 aspect-video rounded-3xl overflow-hidden shadow-2xl animate-float">
-        <video
-          class="w-full h-full object-cover"
-          autoplay
-          loop
-          muted
-          playsinline
-        >
-          <source src="/videos/video-output-AB3F1841-B045-42AA-B344-042D4C4B326E-1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/VLvVNMbQIRY?autoplay=1&loop=1&mute=1&playsinline=1"
+          frameborder="0"
+          allow="autoplay; loop; mute; playsinline"
+        ></iframe>
       </div>
     </div>
   </div>

@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "helvetiva", arial, sans-serif;
+}
+.scrolling-container {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+
+  .scrolling-wrapper {
+    display: flex;
+  }
+
+  .scrolling-item {
+    white-space: nowrap;
+    font-size: 200px;
+    font-weight: 900;
+    letter-spacing: ls(120);
+    line-height: 1em;
+    margin: 0 2rem 0 0;
+    color: #fff;
+  }
+}
+
+.spacer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: #000;
+  font-size: 30px;
+  background: #fff;
+}

@@ -2,6 +2,9 @@
 title: "About Me"
 description: "Learn more about Rian Kochel, multimedia storyteller and digital content creator."
 layout: "about"
+menu:
+  main:
+    weight: 2
 ---
 
 ## Hello, I'm Rian

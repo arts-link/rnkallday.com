@@ -1,106 +1,57 @@
-[![rnk all day build status](https://github.com/arts-link/rnkallday.com/actions/workflows/hugo.yml/badge.svg)](https://arts-link.github.io/rnkallday.com/)
+# Word Nerd: A Portfolio of Multimedia Work by Rian Kochel
 
-1. Overview
-Project: 
-A Hugo-Based Portfolio Overhaul
-Title:
-Word Nerd: A portfolio of multimedia work by Rian Kochel
+[![Build Status](https://github.com/arts-link/rnkallday.com/actions/workflows/hugo-deploy.yml/badge.svg)](https://github.com/arts-link/rnkallday.com/actions/workflows/hugo-deploy.yml)
 
-Project Vision:
-Transform the portfolio into a fast, responsive, and modern Hugo website that showcases written, audio, and visual storytelling. Emphasize smooth animations, dark mode, and a design system based on the following:
+A modern, responsive Hugo website that showcases written, audio, and visual storytelling with smooth animations and dark mode support.
 
+## Overview
 
-Colors:
- 
+This portfolio site is built with Hugo and TailwindCSS, featuring a custom theme called "Word Nerd" that emphasizes clean design, accessibility, and multimedia content presentation.
 
-Fonts:
+### Design System
 
+**Colors:**
+- Primary: Turquoise Blue (#6BE5D8)
+- Supporting color palette derived from the primary color
 
-Turquoise Blue #6BE5D8
+**Fonts:**
+- Headings: Montserrat
+- Body: Inter
 
-2. Goals & Objectives
-Modernize the Design:
-Rebuild the site with a clean, minimal design that integrates TailwindCSS for rapid styling and customization.
+## Goals & Objectives
 
-Multimedia Content:
-Seamlessly display written work, embedded audio, and video assets.
+- **Modernize the Design**: Clean, minimal design with TailwindCSS for rapid styling and customization
+- **Multimedia Content**: Seamless display of written work, embedded audio, and video assets
+- **Personalize Design Elements**: Custom graphics, illustrations, and animations
+- **Interactive Features**: Micro-animations and interactive UI elements
+- **Responsive & Accessible**: WCAG 2.1 AA compliance and excellent performance on all devices
+- **Easy Content Management**: Hugo's markdown and asset pipelines for quick updates
+- **GitHub Pages Deployment**: Automated deployment via GitHub Actions
 
+## Features & Technical Requirements
 
-Personalize Design Elements:
-Use custom graphics, illustrations, or animations that tie into my work.
+### Core Sections
 
+1. **Homepage/Hero**: Compelling introductory section with a 30-second repeating video
+2. **About**: Biography with interactive UI component highlighting tech skills and three professional themes:
+   - Idea Mechanic
+   - Digital Alchemist
+   - Sherpa to the Luddites
+3. **Work**: Card-based layout for portfolio items with animations
+4. **Contact**: Responsive contact form with validation
 
-Interactive Features:
-Incorporate interactive elements or micro-animations that engage visitors.
+### Technical Implementation
 
-Responsive & Accessible:
-Ensure high accessibility scores (WCAG 2.1 AA) and excellent performance on all devices.
-
-Easy Content Management:
-Use Hugo’s markdown and asset pipelines to allow quick updates.
-
-GitHub Pages Deployment:
-Final site will be pushed to GitHub and hosted under your current URL using GitHub Pages.
-
-3. Features & Technical Requirements
-Core Sections:
-
-HOMEPAGE/HERO:
-Compelling introductory section with a 30 second repeating video as the centerpiece.
-
-ABOUT
-Layout featuring brief biography with an engaging/interactive ui component highlighting my tech tool familiarity. This section will also intro three key themes of my professional persona that fall under the overarching “word Nerd” title of the portfolio: Idea Mechanic, Digital Alchemist, and Sherpa to the Luddites 
-
-These themes will curate and categorize the projects I am showcasing as a way to define my skill set clearly, but also highlight my versatility and adaptability in adopting new tech.
-
-WORK
-Card-based layout for portfolio items with animations.
-
-CONTACT
-A responsive contact form with validation.
-
-Design System:
-
-Integrate custom TailwindCSS utilities for your Aquablue color tokens.
-
-Animations (fade-in, slide-up/slide-down) for dynamic visuals.
-
-Advanced Integration:
-
-JavaScript interactivity (via Hugo Pipes) and an optional React integration for components.
-
-Build process considerations: avoid file duplication, leverage GitHub Actions (or similar CI/CD) where npm install precedes Hugo builds.
-
-Deployment:
-
-Final site hosted on GitHub Pages. Follow best practices for configuring a repository (e.g., repository naming for user sites, use of a CNAME file if using a custom domain).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- **Design System**: Custom TailwindCSS utilities for the turquoise color palette
+- **Animations**: Fade-in, slide-up/slide-down for dynamic visuals
+- **JavaScript**: AlpineJS for interactive components
+- **Build Process**: GitHub Actions workflow for automated builds and deployment
 
 
 ```bash
-# single story, the `index.md` utilizes the single template.
-hugo new content <existing-section>/<story-name>/index.md
-# new section, the `_index.md` utilizes the `list` template.
-hugo new content <section-name>/_index.md
-# new page in there
-hugo new content <section-name>/<story-name>/index.md
-# sections can be nested infinitely.
+# Install dependencies
+npm install
+
+# Start development server
+hugo server -D
 ```
-
-## To remove content
-
-- change the draft status to true
-- delete the directory

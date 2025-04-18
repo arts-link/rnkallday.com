@@ -1,13 +1,10 @@
-+++
-title = 'Home'
-date = 2024-07-31T13:14:36-07:00
-# draft = true
+---
+title: "Word Nerd: A Portfolio of Multimedia Work by Rian Kochel"
+description: "Explore my portfolio of multimedia storytelling across written, audio, and visual formats."
+date: 2024-07-31T13:14:36-07:00
 [menu]
- [menu.main]
-  weight = 1
-+++
-## Howdy, I'm Rian Kochel.
+  [menu.main]
+    weight: 1
+---
 
-I'm a storyteller. that guy who holds court at a dinner party full of strangers. I got the gift of gab from my ma, but My Pops was a pistol so I'm a real son of a gun. 
-
-
+Welcome to my portfolio! I'm a multimedia storyteller passionate about crafting compelling narratives through various formats.

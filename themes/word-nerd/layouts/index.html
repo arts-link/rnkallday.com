@@ -1,24 +1,72 @@
 {{ define "main" }}
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section class="relative h-screen flex items-center justify-center overflow-hidden bg-black dark:bg-white">
   <!-- Hero Background -->
-  <div class="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 to-gray-800">
-    <!-- Placeholder for video - we'll add this later -->
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="absolute inset-0 z-0">
+    <!-- Video Background -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="relative w-4/5 md:w-3/5 lg:w-2/5 aspect-video rounded-3xl overflow-hidden shadow-2xl animate-float">
+        <video
+          class="w-full h-full object-cover"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source src="/videos/video-output-AB3F1841-B045-42AA-B344-042D4C4B326E-1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left Side Word Cascade -->
+  <div class="absolute left-4 top-0 bottom-0 w-1/4 flex flex-col justify-center z-10 overflow-hidden">
+    <div class="word-cascade-container">
+      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-turquoise">WORD</div>
+      <div class="word-cascade-item text-xl md:text-3xl lg:text-5xl font-display text-white dark:text-black">NERD</div>
+      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-turquoise">WORD</div>
+      <div class="word-cascade-item text-xl md:text-2xl lg:text-4xl font-display text-white dark:text-black">NERD</div>
+      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-turquoise">WORD</div>
+      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-white dark:text-black">NERD</div>
+    </div>
+  </div>
+
+  <!-- Right Side Word Cascade -->
+  <div class="absolute right-4 top-0 bottom-0 w-1/4 flex flex-col justify-center z-10 overflow-hidden">
+    <div class="word-cascade-container">
+      <div class="word-cascade-item text-xl md:text-3xl lg:text-5xl font-display text-white dark:text-black">NERD</div>
+      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-turquoise">WORD</div>
+      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-white dark:text-black">NERD</div>
+      <div class="word-cascade-item text-xl md:text-2xl lg:text-4xl font-display text-turquoise">WORD</div>
+      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-white dark:text-black">NERD</div>
+      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-turquoise">WORD</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="absolute top-8 left-0 right-0 z-20">
+    <nav class="nav-container mx-auto max-w-4xl px-4">
+      <ul class="nav-items flex justify-center space-x-8">
+        <li class="nav-item">
+          <a href="/about/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a href="/work/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">WORK</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">CONTACT</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
   <!-- Hero Content -->
-  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-      <span class="text-turquoise">Word</span> Nerd
-    </h1>
-    <p class="text-xl md:text-2xl text-white mb-8">
-      A portfolio of multimedia work by Rian Kochel
-    </p>
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-64">
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a href="/about/" class="bg-turquoise hover:bg-turquoise-600 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
         Learn About Me
       </a>
-      <a href="/work/" class="bg-transparent hover:bg-white/10 text-white border-2 border-white py-3 px-6 rounded-lg transition-colors duration-300">
+      <a href="/work/" class="bg-transparent hover:bg-white/10 text-white dark:text-black border-2 border-white dark:border-black py-3 px-6 rounded-lg transition-colors duration-300">
         View My Work
       </a>
     </div>

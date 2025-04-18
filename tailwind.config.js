@@ -32,8 +32,8 @@ module.exports = {
         "hero-video": "url('/images/hero-bg.webp')",
       },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
-        display: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        sans: ["Fredoka", ...defaultTheme.fontFamily.sans],
+        display: ["Boldonse", ...defaultTheme.fontFamily.sans],
       },
       screens: {
         'sm': '640px',

@@ -13,7 +13,11 @@
   // Add event listener to toggle button
   document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
+<<<<<<< HEAD
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+=======
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+>>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
 
     if (themeToggle) {
       themeToggle.addEventListener('click', function() {
@@ -28,8 +32,13 @@
     }
 
     // Mobile menu toggle
+<<<<<<< HEAD
     if (mobileMenuToggle) {
       mobileMenuToggle.addEventListener('click', function() {
+=======
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener('click', function() {
+>>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenu) {
           mobileMenu.classList.toggle('hidden');
@@ -39,6 +48,7 @@
   });
 </script>
 {{ end }}
+<<<<<<< HEAD
 
 <!-- Animation scripts -->
 <script>
@@ -72,3 +82,5 @@
 <!-- Horizontal scroll script -->
 {{ $horizontalScroll := resources.Get "js/horizontal-scroll.js" | resources.Minify }}
 <script src="{{ $horizontalScroll.RelPermalink }}"></script>
+=======
+>>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a

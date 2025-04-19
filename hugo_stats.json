@@ -27,16 +27,12 @@
       "path",
       "script",
       "section",
-<<<<<<< HEAD
-      "source",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "span",
+      "style",
       "svg",
       "textarea",
       "title",
-      "ul",
-      "video"
+      "ul"
     ],
     "classes": [
       "-ml-1",
@@ -44,29 +40,16 @@
       "-my-1.5",
       "absolute",
       "all",
-<<<<<<< HEAD
       "animate-float",
       "animate-spin",
       "aspect-square",
       "aspect-video",
       "audio",
       "bg-black",
-=======
-      "animate-spin",
-      "aspect-square",
-      "audio",
-      "bg-black",
-      "bg-gradient-to-br",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
-      "bg-gray-100",
       "bg-gray-200",
       "bg-gray-50",
       "bg-gray-900",
       "bg-green-50",
-<<<<<<< HEAD
-=======
-      "bg-opacity-50",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "bg-transparent",
       "bg-turquoise",
       "bg-white",
@@ -79,28 +62,19 @@
       "border-green-500",
       "border-l-4",
       "border-red-500",
-<<<<<<< HEAD
       "border-t",
       "border-transparent",
       "border-turquoise",
       "border-white",
       "bottom-0",
-=======
-      "border-transparent",
-      "border-turquoise",
-      "border-white",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "container",
       "dark:bg-gray-600",
       "dark:bg-gray-700",
       "dark:bg-gray-800",
       "dark:bg-gray-900",
       "dark:bg-green-900",
-<<<<<<< HEAD
       "dark:bg-white",
       "dark:border-black",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "dark:border-gray-600",
       "dark:border-gray-700",
       "dark:border-red-500",
@@ -111,10 +85,7 @@
       "dark:hover:text-gray-300",
       "dark:hover:text-turquoise",
       "dark:prose-invert",
-<<<<<<< HEAD
       "dark:text-black",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "dark:text-gray-300",
       "dark:text-gray-400",
       "dark:text-gray-500",
@@ -143,18 +114,11 @@
       "focus:ring-offset-2",
       "focus:ring-turquoise",
       "font-bold",
-<<<<<<< HEAD
       "font-display",
       "font-medium",
       "font-sans",
       "font-semibold",
       "font-titillium",
-=======
-      "font-medium",
-      "font-semibold",
-      "font-titillium",
-      "from-gray-900",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "gap-4",
       "gap-6",
       "gap-8",
@@ -168,10 +132,6 @@
       "h-48",
       "h-5",
       "h-6",
-<<<<<<< HEAD
-      "h-full",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "h-screen",
       "hidden",
       "hover:-translate-y-1",
@@ -195,7 +155,6 @@
       "justify-between",
       "justify-center",
       "large",
-<<<<<<< HEAD
       "left-0",
       "left-4",
       "lg:grid-cols-3",
@@ -204,9 +163,6 @@
       "lg:text-6xl",
       "lg:text-7xl",
       "lg:w-2/5",
-=======
-      "lg:grid-cols-3",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "max-w-2xl",
       "max-w-3xl",
       "max-w-4xl",
@@ -218,34 +174,21 @@
       "mb-4",
       "mb-6",
       "mb-8",
-<<<<<<< HEAD
       "md:block",
-=======
-      "md:flex",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "md:flex-row",
       "md:grid-cols-2",
       "md:grid-cols-3",
       "md:hidden",
       "md:inline-block",
-      "md:mb-0",
       "md:text-2xl",
-<<<<<<< HEAD
       "md:text-3xl",
       "md:text-4xl",
       "md:text-5xl",
-=======
-      "md:text-4xl",
-      "md:text-6xl",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "md:w-1/3",
       "md:w-1/4",
       "md:w-2/3",
       "md:w-3/4",
-<<<<<<< HEAD
       "md:w-3/5",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "min-h-screen",
       "ml-1",
       "ml-3",
@@ -254,18 +197,12 @@
       "mt-1",
       "mt-12",
       "mt-4",
-<<<<<<< HEAD
       "mt-64",
       "mx-auto",
       "my-6",
       "nav-container",
       "nav-item",
       "nav-items",
-      "object-cover",
-=======
-      "mx-auto",
-      "my-6",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "opacity-0",
       "opacity-100",
       "opacity-25",
@@ -289,21 +226,15 @@
       "py-4",
       "py-8",
       "relative",
-<<<<<<< HEAD
       "right-0",
       "right-4",
       "rounded-3xl",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "rounded-full",
       "rounded-lg",
       "rounded-md",
       "scale-100",
       "scale-90",
-<<<<<<< HEAD
       "shadow-2xl",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "shadow-md",
       "sherpa",
       "slide-down",
@@ -312,10 +243,7 @@
       "sm:text-base",
       "soundcloud-embed",
       "space-x-2",
-<<<<<<< HEAD
       "space-x-4",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "space-x-6",
       "space-x-8",
       "space-y-12",
@@ -342,13 +270,8 @@
       "text-white",
       "text-xl",
       "text-xs",
-<<<<<<< HEAD
       "top-0",
       "top-8",
-=======
-      "to-gray-800",
-      "top-0",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "tracking-wider",
       "transform",
       "transition",
@@ -358,28 +281,19 @@
       "uppercase",
       "visual",
       "w-1/3",
-<<<<<<< HEAD
       "w-1/4",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "w-10",
       "w-12",
       "w-16",
       "w-2/3",
       "w-24",
       "w-4",
-<<<<<<< HEAD
       "w-4/5",
       "w-5",
       "w-6",
       "w-full",
       "word-cascade-container",
       "word-cascade-item",
-=======
-      "w-5",
-      "w-6",
-      "w-full",
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
       "writing",
       "z-0",
       "z-10",
@@ -395,11 +309,8 @@
       "marketing-collateral",
       "message",
       "misc",
-<<<<<<< HEAD
       "mobile-menu",
-=======
->>>>>>> 8fe515e2fdc38c01b57f3a246cdd9ab3cef0389a
-      "mobile-menu-button",
+      "mobile-menu-toggle",
       "name",
       "please-reach-out-to-memailtoriankochelgmailcom-if-you-dont-see-the-examples-youre-looking-for",
       "subject",

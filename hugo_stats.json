@@ -175,6 +175,10 @@
       "mb-6",
       "mb-8",
       "md:block",
+<<<<<<< Updated upstream
+=======
+      "md:flex",
+>>>>>>> Stashed changes
       "md:flex-row",
       "md:grid-cols-2",
       "md:grid-cols-3",
@@ -310,6 +314,10 @@
       "message",
       "misc",
       "mobile-menu",
+<<<<<<< Updated upstream
+=======
+      "mobile-menu-button",
+>>>>>>> Stashed changes
       "mobile-menu-toggle",
       "name",
       "please-reach-out-to-memailtoriankochelgmailcom-if-you-dont-see-the-examples-youre-looking-for",

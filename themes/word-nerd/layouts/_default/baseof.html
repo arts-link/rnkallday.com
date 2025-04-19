@@ -6,7 +6,9 @@
     {{ block "head" . }}{{ end }}
 </head>
 <body class="flex flex-col min-h-screen {{ if .Site.Params.showDarkToggle }}dark:bg-gray-900 dark:text-white transition-colors duration-300{{ end }}">
+    {{ if not .IsHome }}
     {{ partial "header.html" . }}
+    {{ end }}
     <main class="flex-grow">
         {{ block "main" . }}{{ end }}
     </main>

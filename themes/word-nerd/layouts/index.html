@@ -4,7 +4,7 @@
   <div class="absolute inset-0 z-0">
     <!-- YouTube Background instead of local video -->
     <div class="absolute inset-0 flex items-center justify-center">
-      <div class="relative w-[92%] md:w-[69%] lg:w-[46%] aspect-video rounded-3xl overflow-hidden shadow-2xl animate-float">
+      <div class="relative w-[110%] md:w-[83%] lg:w-[55%] aspect-video rounded-3xl overflow-hidden shadow-2xl animate-float">
         <iframe
           width="100%"
           height="100%"
@@ -19,33 +19,19 @@
     </div>
   </div>
 
-  <!-- Left Side Word Cascade -->
-  <div class="absolute left-4 top-0 bottom-0 w-1/4 flex flex-col justify-center z-10 overflow-hidden">
-    <div class="word-cascade-container">
-      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-turquoise">WORD</div>
-      <div class="word-cascade-item text-xl md:text-3xl lg:text-5xl font-display text-white dark:text-black">NERD</div>
-      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-turquoise">WORD</div>
-      <div class="word-cascade-item text-xl md:text-2xl lg:text-4xl font-display text-white dark:text-black">NERD</div>
-      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-turquoise">WORD</div>
-      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-white dark:text-black">NERD</div>
-    </div>
-  </div>
-
-  <!-- Right Side Word Cascade -->
-  <div class="absolute right-4 top-0 bottom-0 w-1/4 flex flex-col justify-center z-10 overflow-hidden">
-    <div class="word-cascade-container">
-      <div class="word-cascade-item text-xl md:text-3xl lg:text-5xl font-display text-white dark:text-black">NERD</div>
-      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-turquoise">WORD</div>
-      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-white dark:text-black">NERD</div>
-      <div class="word-cascade-item text-xl md:text-2xl lg:text-4xl font-display text-turquoise">WORD</div>
-      <div class="word-cascade-item text-2xl md:text-4xl lg:text-6xl font-display text-white dark:text-black">NERD</div>
-      <div class="word-cascade-item text-3xl md:text-5xl lg:text-7xl font-display text-turquoise">WORD</div>
-    </div>
-  </div>
+  <!-- Word Cascade removed as requested -->
 
   <!-- Navigation -->
   <div class="absolute top-8 left-0 right-0 z-20">
-    <nav class="nav-container mx-auto max-w-4xl px-4">
+    <nav class="nav-container mx-auto max-w-4xl px-4 flex justify-between items-center">
+      <div>
+        <!-- Logo for mobile -->
+        <span class="md:hidden text-2xl font-display text-white dark:text-black">
+          <span class="text-turquoise">{{ .Site.Params.logo_firstWord }}</span>
+          <span>{{ .Site.Params.logo_lastWord }}</span>
+        </span>
+      </div>
+
       <ul class="nav-items flex justify-center space-x-8">
         <li class="nav-item">
           <a href="/about/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">ABOUT</a>
@@ -57,6 +43,20 @@
           <a href="/contact/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">CONTACT</a>
         </li>
       </ul>
+
+      {{ if .Site.Params.showDarkToggle }}
+      <!-- Dark mode toggle -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise focus:outline-none focus:ring-2 focus:ring-turquoise rounded-lg text-sm p-2"
+        aria-label="Toggle dark mode"
+      >
+        <svg id="theme-toggle-dark-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+      </button>
+      {{ end }}
     </nav>
   </div>
 

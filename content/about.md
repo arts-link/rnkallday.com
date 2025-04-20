@@ -1,6 +1,6 @@
 ---
 title: "About Me"
-
+description: "Learn more about Rian Kochel, a multimedia storyteller with expertise in writing, audio, and visual media."
 layout: "about"
 profile_image: "/images/rian-profile.jpg"
 skills:
@@ -41,10 +41,10 @@ menu:
     weight: 2
 ---
 
-## Howdy,I'm Rian.
+## Howdy, I'm Rian.
 I tell stories, and I’m damn good at it because I tell them with intent and authenticity. To hell with false modesty.
 
-Everyday I’m bombarded by beautiful stories. A well-crafted collection of words that capture a moment of humanity perfectly. The distant gaze of a stranger who is lost, deep in contemplation about something I can sense is eating them alive. Being witness to (or the instigator of) a random act of kindness. I inevitably stumble across something that shatters my heart into a billion beautiful pieces.
+Every day I’m bombarded by beautiful stories. A well-crafted collection of words that capture a moment of humanity perfectly. The distant gaze of a stranger who is lost, deep in contemplation about something I can sense is eating them alive. Being witness to (or the instigator of) a random act of kindness. I inevitably stumble across something that shatters my heart into a billion beautiful pieces.
 
 You can find me at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride. My work spans across a wide variance - from art and culture to AI  - and it can be found published in places that care about such things.
 

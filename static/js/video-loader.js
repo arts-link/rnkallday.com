@@ -1,35 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
   const videoElement = document.getElementById('hero-video');
   if (videoElement) {
-    // For GitHub Pages with Git LFS, we need to use the raw content URL
-    // This is the format for GitHub LFS files
-    const isProduction = window.location.hostname === 'rnkallday.com';
+    // Add a cache-busting parameter to prevent caching issues
+    const cacheBuster = new Date().getTime();
 
-    if (isProduction) {
-      // In production, use the GitHub raw content URL for LFS files
-      // This bypasses the Git LFS pointer and gets the actual file
-      const repoOwner = 'arts-link';
-      const repoName = 'rnkallday.com';
-      const branch = 'main';
-      const filePath = 'static/videos/hero.mp4';
-
-      const rawUrl = `https://media.githubusercontent.com/media/${repoOwner}/${repoName}/${branch}/${filePath}`;
-      console.log('Loading video from GitHub LFS URL:', rawUrl);
-
-      videoElement.src = rawUrl;
-    } else {
-      // In development, use the local path
-      videoElement.src = '/videos/hero.mp4';
-      console.log('Loading video from local path');
-    }
+    // Always use the local path for simplicity
+    videoElement.src = `/videos/hero.mp4?v=${cacheBuster}`;
+    console.log(`Loading video from path: /videos/hero.mp4?v=${cacheBuster}`);
 
     // Add event listeners for debugging
     videoElement.addEventListener('error', function(e) {
       console.error('Video error:', e);
+      // If there's an error, try a direct URL as fallback
+      videoElement.src = `https://rnkallday.com/videos/hero.mp4?v=${cacheBuster}`;
+      console.log(`Trying fallback URL: https://rnkallday.com/videos/hero.mp4?v=${cacheBuster}`);
     });
 
     videoElement.addEventListener('canplay', function() {
-      console.log('Video can play now');
+      console.log('Video can play now from:', videoElement.src);
     });
   }
 });

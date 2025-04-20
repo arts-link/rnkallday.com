@@ -75,7 +75,3 @@
 
 <!-- Video loader script -->
 <script src="/js/video-loader.js"></script>
-
-<!-- Text overlay component script -->
-{{ $textOverlay := resources.Get "js/text-overlay.js" | resources.Minify }}
-<script src="{{ $textOverlay.RelPermalink }}"></script>

@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import text overlay styles */
-@import "text-overlay.css";
-
 /* Custom animations */
 @layer utilities {
   /* Fade-in animation */

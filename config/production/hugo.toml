@@ -1,5 +1,5 @@
 # PLACE ANY CONFIG HERE THAT IS ONLY FOR PRODUCTION ENVIRONMENT
-baseURL= "https://rnkallday.com"
+baseURL= "https://rnkallday.com/"
 
 [params]
   plausible_domain = "rnkallday.com"

@@ -1,20 +1,9 @@
 <!-- Navigation from hero page -->
 <div class="absolute top-0 left-0 right-0 z-20 bg-black dark:bg-white py-4">
   <nav class="nav-container mx-auto max-w-4xl px-4 flex justify-between items-center">
-    <div>
-      <!-- Logo -->
-      <a href="/" class="flex items-center space-x-2">
-        <span class="text-2xl font-display {{ .Site.Params.logo_fontClass }} text-white dark:text-black">
-          <span class="text-turquoise">{{ .Site.Params.logo_firstWord }}</span>
-          <span>{{ .Site.Params.logo_lastWord }}</span>
-        </span>
-        {{ if .Site.Params.logo_tagline }}
-        <span class="hidden md:inline-block text-xs uppercase tracking-wider text-gray-400 dark:text-gray-600 font-sans">{{ .Site.Params.logo_tagline }}</span>
-        {{ end }}
-      </a>
-    </div>
+    <div class="flex-1"></div>
 
-    <ul class="nav-items flex justify-center space-x-8">
+    <ul class="nav-items flex justify-center space-x-8 flex-1">
       <li class="nav-item">
         <a href="/about/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">ABOUT</a>
       </li>
@@ -26,18 +15,20 @@
       </li>
     </ul>
 
-    {{ if .Site.Params.showDarkToggle }}
-    <!-- Dark mode toggle -->
-    <button
-      id="theme-toggle"
-      type="button"
-      class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise focus:outline-none focus:ring-2 focus:ring-turquoise rounded-lg text-sm p-2"
-      aria-label="Toggle dark mode"
-    >
-      <svg id="theme-toggle-dark-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-      </svg>
-    </button>
-    {{ end }}
+    <div class="flex-1 flex justify-end">
+      {{ if .Site.Params.showDarkToggle }}
+      <!-- Dark mode toggle -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise focus:outline-none focus:ring-2 focus:ring-turquoise rounded-lg text-sm p-2"
+        aria-label="Toggle dark mode"
+      >
+        <svg id="theme-toggle-dark-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+      </button>
+      {{ end }}
+    </div>
   </nav>
 </div>

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // or if the current path starts with the link path (for section pages)
       if ((linkPath === currentPath) ||
           (currentPath === '/' && linkPath === '/') ||
+          (linkPath === '/' && currentPath === '/') ||
           (currentPath.startsWith(linkPath) && linkPath !== '/')) {
         item.classList.add('active');
       }

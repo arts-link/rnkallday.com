@@ -1,9 +1,46 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-12">
+<!-- Navigation bar similar to hero page -->
+<div class="absolute top-0 left-0 right-0 z-20 bg-black dark:bg-white py-4">
+  <nav class="nav-container mx-auto max-w-4xl px-4 flex justify-between items-center">
+    <div class="flex-1"></div>
+
+    <ul class="nav-items flex justify-center space-x-8 flex-1">
+      <li class="nav-item">
+        <a href="/about/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a href="/work/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">WORK</a>
+      </li>
+      <li class="nav-item">
+        <a href="/" class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise font-display text-xl transition-colors duration-300">HOME</a>
+      </li>
+    </ul>
+
+    <div class="flex-1 flex justify-end">
+      {{ if .Site.Params.showDarkToggle }}
+      <!-- Dark mode toggle -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="text-white dark:text-black hover:text-turquoise dark:hover:text-turquoise focus:outline-none focus:ring-2 focus:ring-turquoise rounded-lg text-sm p-2"
+        aria-label="Toggle dark mode"
+      >
+        <svg id="theme-toggle-dark-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+      </button>
+      {{ end }}
+    </div>
+  </nav>
+</div>
+
+<!-- Main content with padding-top to account for fixed navbar -->
+<div class="bg-black dark:bg-white min-h-screen">
+<div class="container mx-auto px-4 py-12 pt-24">
   <header class="mb-12 text-center">
-    <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4 slide-down">{{ .Title }}</h1>
+    <h1 class="text-4xl font-bold text-white dark:text-gray-900 mb-4 slide-down">{{ .Title }}</h1>
     {{ with .Description }}
-    <p class="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto fade-in">{{ . }}</p>
+    <p class="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto fade-in">{{ . }}</p>
     {{ end }}
   </header>
 
@@ -12,9 +49,9 @@
       <div class="prose prose-lg dark:prose-invert mb-8">
         {{ .Content }}
       </div>
-      
-      <form 
-        id="contact-form" 
+
+      <form
+        id="contact-form"
         class="space-y-6"
         x-data="{
           name: '',
@@ -24,40 +61,40 @@
           errors: {},
           success: false,
           loading: false,
-          
+
           validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
           },
-          
+
           validateForm() {
             this.errors = {};
-            
+
             if (!this.name.trim()) {
               this.errors.name = 'Name is required';
             }
-            
+
             if (!this.email.trim()) {
               this.errors.email = 'Email is required';
             } else if (!this.validateEmail(this.email)) {
               this.errors.email = 'Please enter a valid email address';
             }
-            
+
             if (!this.subject.trim()) {
               this.errors.subject = 'Subject is required';
             }
-            
+
             if (!this.message.trim()) {
               this.errors.message = 'Message is required';
             }
-            
+
             return Object.keys(this.errors).length === 0;
           },
-          
+
           submitForm() {
             if (this.validateForm()) {
               this.loading = true;
-              
+
               // Simulate form submission (replace with actual form submission)
               setTimeout(() => {
                 this.loading = false;
@@ -73,8 +110,8 @@
         @submit.prevent="submitForm"
       >
         <!-- Success Message -->
-        <div 
-          x-show="success" 
+        <div
+          x-show="success"
           x-transition:enter="transition ease-out duration-300"
           x-transition:enter-start="opacity-0 transform scale-90"
           x-transition:enter-end="opacity-100 transform scale-100"
@@ -94,8 +131,8 @@
             </div>
             <div class="ml-auto pl-3">
               <div class="-mx-1.5 -my-1.5">
-                <button 
-                  @click="success = false" 
+                <button
+                  @click="success = false"
                   class="inline-flex rounded-md p-1.5 text-green-500 hover:bg-green-100 dark:hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                 >
                   <span class="sr-only">Dismiss</span>
@@ -107,75 +144,75 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Name Field -->
         <div>
           <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
+          <input
+            type="text"
+            id="name"
+            name="name"
             x-model="name"
             class="w-full px-4 py-2 border rounded-md focus:ring-turquoise focus:border-turquoise dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             :class="{'border-red-500 dark:border-red-500': errors.name}"
           >
           <p x-show="errors.name" x-text="errors.name" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
         </div>
-        
+
         <!-- Email Field -->
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
+          <input
+            type="email"
+            id="email"
+            name="email"
             x-model="email"
             class="w-full px-4 py-2 border rounded-md focus:ring-turquoise focus:border-turquoise dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             :class="{'border-red-500 dark:border-red-500': errors.email}"
           >
           <p x-show="errors.email" x-text="errors.email" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
         </div>
-        
+
         <!-- Subject Field -->
         <div>
           <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
-          <input 
-            type="text" 
-            id="subject" 
-            name="subject" 
+          <input
+            type="text"
+            id="subject"
+            name="subject"
             x-model="subject"
             class="w-full px-4 py-2 border rounded-md focus:ring-turquoise focus:border-turquoise dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             :class="{'border-red-500 dark:border-red-500': errors.subject}"
           >
           <p x-show="errors.subject" x-text="errors.subject" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
         </div>
-        
+
         <!-- Message Field -->
         <div>
           <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
-          <textarea 
-            id="message" 
-            name="message" 
-            rows="5" 
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
             x-model="message"
             class="w-full px-4 py-2 border rounded-md focus:ring-turquoise focus:border-turquoise dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             :class="{'border-red-500 dark:border-red-500': errors.message}"
           ></textarea>
           <p x-show="errors.message" x-text="errors.message" class="mt-1 text-sm text-red-600 dark:text-red-400"></p>
         </div>
-        
+
         <!-- Submit Button -->
         <div>
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             class="w-full bg-turquoise hover:bg-turquoise-600 text-gray-900 font-semibold py-3 px-6 rounded-lg transition-colors duration-300 flex justify-center items-center"
             :disabled="loading"
           >
-            <svg 
-              x-show="loading" 
-              class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-900" 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
+            <svg
+              x-show="loading"
+              class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-900"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
               viewBox="0 0 24 24"
               style="display: none;"
             >
@@ -187,7 +224,7 @@
         </div>
       </form>
     </div>
-    
+
     <!-- Alternative Contact Methods -->
     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 slide-up">
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
@@ -201,7 +238,7 @@
           <a href="mailto:{{ .Site.Params.author.email }}" class="hover:text-turquoise transition-colors duration-200">{{ .Site.Params.author.email }}</a>
         </p>
       </div>
-      
+
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
         <div class="text-turquoise mb-4">
           <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -213,7 +250,7 @@
           <a href="https://linkedin.com/in/riankochel" target="_blank" rel="noopener noreferrer" class="hover:text-turquoise transition-colors duration-200">Connect with me</a>
         </p>
       </div>
-      
+
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 text-center">
         <div class="text-turquoise mb-4">
           <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -227,5 +264,6 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 {{ end }}

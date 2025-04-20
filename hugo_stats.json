@@ -27,12 +27,14 @@
       "path",
       "script",
       "section",
+      "source",
       "span",
       "style",
       "svg",
       "textarea",
       "title",
-      "ul"
+      "ul",
+      "video"
     ],
     "classes": [
       "-ml-1",
@@ -127,6 +129,7 @@
       "h-48",
       "h-5",
       "h-6",
+      "h-full",
       "h-screen",
       "hidden",
       "hover:-translate-y-1",
@@ -189,6 +192,7 @@
       "nav-container",
       "nav-item",
       "nav-items",
+      "object-cover",
       "opacity-0",
       "opacity-100",
       "opacity-25",

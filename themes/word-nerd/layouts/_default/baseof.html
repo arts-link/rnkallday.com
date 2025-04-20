@@ -6,9 +6,7 @@
     {{ block "head" . }}{{ end }}
 </head>
 <body class="flex flex-col min-h-screen {{ if .Site.Params.showDarkToggle }}dark:bg-gray-900 dark:text-white transition-colors duration-300{{ end }}">
-    {{ if not (or (eq .Layout "about") (eq .Layout "work") (eq .Layout "contact")) }}
-    {{ partial "header-word-nerd.html" . }}
-    {{ end }}
+    {{ partial "nav-centered.html" . }}
     <main class="flex-grow">
         {{ block "main" . }}{{ end }}
     </main>

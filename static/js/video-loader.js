@@ -1,43 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
   const videoElement = document.getElementById('hero-video');
   if (videoElement) {
-    // Try multiple paths to find the working one
-    const possiblePaths = [
-      '/videos/hero.mp4',
-      'videos/hero.mp4',
-      'https://rnkallday.com/videos/hero.mp4',
-      window.location.origin + '/videos/hero.mp4'
-    ];
-    
-    // Function to check if a video source works
-    function tryVideoSource(index) {
-      if (index >= possiblePaths.length) {
-        console.error('Could not load video from any path');
-        return;
-      }
-      
-      const path = possiblePaths[index];
-      console.log('Trying video path:', path);
-      
-      videoElement.src = path;
-      
-      // Listen for errors and try the next path if this one fails
-      const errorHandler = function() {
-        console.log('Failed to load video from:', path);
-        videoElement.removeEventListener('error', errorHandler);
-        tryVideoSource(index + 1);
-      };
-      
-      videoElement.addEventListener('error', errorHandler);
-      
-      // If video can play, remove the error handler
-      videoElement.addEventListener('canplay', function() {
-        console.log('Successfully loaded video from:', path);
-        videoElement.removeEventListener('error', errorHandler);
-      }, { once: true });
+    // For GitHub Pages with Git LFS, we need to use the raw content URL
+    // This is the format for GitHub LFS files
+    const isProduction = window.location.hostname === 'rnkallday.com';
+
+    if (isProduction) {
+      // In production, use the GitHub raw content URL for LFS files
+      // This bypasses the Git LFS pointer and gets the actual file
+      const repoOwner = 'arts-link';
+      const repoName = 'rnkallday.com';
+      const branch = 'main';
+      const filePath = 'static/videos/hero.mp4';
+
+      const rawUrl = `https://media.githubusercontent.com/media/${repoOwner}/${repoName}/${branch}/${filePath}`;
+      console.log('Loading video from GitHub LFS URL:', rawUrl);
+
+      videoElement.src = rawUrl;
+    } else {
+      // In development, use the local path
+      videoElement.src = '/videos/hero.mp4';
+      console.log('Loading video from local path');
     }
-    
-    // Start trying paths
-    tryVideoSource(0);
+
+    // Add event listeners for debugging
+    videoElement.addEventListener('error', function(e) {
+      console.error('Video error:', e);
+    });
+
+    videoElement.addEventListener('canplay', function() {
+      console.log('Video can play now');
+    });
   }
 });

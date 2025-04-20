@@ -1,0 +1,9 @@
+{{ $text1 := .Get "text1" | default "I tell stories, and I'm damn good at it because I tell them with intent and authenticity." }}
+{{ $text2 := .Get "text2" | default "My work spans across a wide variance - from art and culture to AI, sound design to ghostwritten memoirs." }}
+{{ $text3 := .Get "text3" | default "I'm that guy with the untamed mohawk and worn-in 501s on your morning train." }}
+
+{{ partial "bio-overlay-component.html" (dict 
+  "text1" $text1 
+  "text2" $text2 
+  "text3" $text3 
+) }}

@@ -1,0 +1,15 @@
+{{ $text1 := .Get "text1" | default "Idea Mechanic" }}
+{{ $text2 := .Get "text2" | default "Digital Alchemist" }}
+{{ $text3 := .Get "text3" | default "Sherpa to the Luddites" }}
+{{ $desc1 := .Get "desc1" | default "" }}
+{{ $desc2 := .Get "desc2" | default "" }}
+{{ $desc3 := .Get "desc3" | default "" }}
+
+{{ partial "text-overlay-component.html" (dict
+  "text1" $text1
+  "text2" $text2
+  "text3" $text3
+  "desc1" $desc1
+  "desc2" $desc2
+  "desc3" $desc3
+) }}

@@ -1,0 +1,42 @@
+{{ $customText1 := .customText1 | default "Idea Mechanic" }}
+{{ $customText2 := .customText2 | default "Digital Alchemist" }}
+{{ $customText3 := .customText3 | default "Sherpa to the Luddites" }}
+
+<div class="text-overlay-container relative w-full max-w-4xl mx-auto my-12 fade-in">
+  <div class="svg-container relative w-full" style="padding-bottom: 75%;">
+    <img src="/images/text-overlay-illustration.svg" alt="Decorative illustration with text overlay" class="absolute top-0 left-0 w-full h-full">
+    
+    <!-- Text overlays with absolute positioning -->
+    <div class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-center">
+      <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">{{ $customText1 }}</h3>
+    </div>
+    
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+      <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">{{ $customText2 }}</h3>
+    </div>
+    
+    <div class="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2 text-center">
+      <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">{{ $customText3 }}</h3>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to update the SVG text elements -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // This script will run after the page loads
+    try {
+      // Get the SVG document
+      const svgImage = document.querySelector('.text-overlay-container img');
+      
+      // Wait for the SVG to load
+      svgImage.addEventListener('load', function() {
+        // We can't directly manipulate the SVG content when loaded as an image
+        // This is just a fallback - the text is already positioned with HTML overlays
+        console.log('SVG loaded');
+      });
+    } catch (error) {
+      console.error('Error updating SVG text:', error);
+    }
+  });
+</script>

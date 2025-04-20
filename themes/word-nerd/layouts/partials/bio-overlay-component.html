@@ -1,0 +1,66 @@
+{{ $text1 := .text1 | default "I tell stories, and I'm damn good at it because I tell them with intent and authenticity." }}
+{{ $text2 := .text2 | default "My work spans across a wide variance - from art and culture to AI, sound design to ghostwritten memoirs." }}
+{{ $text3 := .text3 | default "I'm that guy with the untamed mohawk and worn-in 501s on your morning train." }}
+
+<div class="text-overlay-wrapper bio-overlay fade-in">
+  <div class="relative">
+    <img src="/images/bio-bg.svg" alt="Abstract background" class="text-overlay-bg w-full h-auto">
+
+    <div class="text-overlay-content absolute top-0 left-0 w-full h-full flex flex-col justify-center py-8 px-4">
+      {{ if $text1 }}
+      <div class="text-overlay-item fade-in flex flex-col items-center justify-center h-auto mx-auto w-full max-w-3xl px-6 py-2">
+        <p class="text-gray-800 dark:text-gray-200">{{ $text1 }}</p>
+      </div>
+      {{ end }}
+
+      {{ if $text2 }}
+      <div class="text-overlay-item fade-in flex flex-col items-center justify-center h-auto mx-auto w-full max-w-3xl px-6 py-2">
+        <p class="text-gray-800 dark:text-gray-200">{{ $text2 }}</p>
+      </div>
+      {{ end }}
+
+      {{ if $text3 }}
+      <div class="text-overlay-item fade-in flex flex-col items-center justify-center h-auto mx-auto w-full max-w-3xl px-6 py-2">
+        <p class="text-gray-800 dark:text-gray-200">{{ $text3 }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<!-- Dark mode support -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if dark mode is enabled
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    const textOverlayItems = document.querySelectorAll('.text-overlay-item p');
+
+    if (isDarkMode) {
+      textOverlayItems.forEach(item => {
+        item.classList.add('text-gray-200');
+        item.classList.remove('text-gray-800');
+      });
+    }
+
+    // Listen for dark mode changes
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'class') {
+          const isDarkMode = document.documentElement.classList.contains('dark');
+
+          textOverlayItems.forEach(item => {
+            if (isDarkMode) {
+              item.classList.add('text-gray-200');
+              item.classList.remove('text-gray-800');
+            } else {
+              item.classList.add('text-gray-800');
+              item.classList.remove('text-gray-200');
+            }
+          });
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+  });
+</script>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient definitions -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B7F3EC" />
+      <stop offset="100%" stop-color="#6BE5D8" />
+    </linearGradient>
+    
+    <!-- Filter for texture -->
+    <filter id="texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="5" result="noise" />
+      <feDiffuseLighting in="noise" lighting-color="#fff" surfaceScale="2" result="light">
+        <feDistantLight azimuth="45" elevation="60" />
+      </feDiffuseLighting>
+      <feBlend in="SourceGraphic" in2="light" mode="screen" result="blend" />
+    </filter>
+  </defs>
+  
+  <!-- Background with abstract shapes -->
+  <g filter="url(#texture)" opacity="0.3">
+    <!-- Wavy lines -->
+    <path d="M0,100 C100,80 200,120 300,100 S400,80 500,100 S600,120 700,100 S800,80 900,100" stroke="#6BE5D8" stroke-width="3" fill="none" />
+    <path d="M0,150 C100,130 200,170 300,150 S400,130 500,150 S600,170 700,150 S800,130 900,150" stroke="#91ECE2" stroke-width="2" fill="none" />
+    <path d="M0,200 C100,180 200,220 300,200 S400,180 500,200 S600,220 700,200 S800,180 900,200" stroke="#B7F3EC" stroke-width="4" fill="none" />
+    
+    <!-- Circular elements -->
+    <circle cx="200" cy="300" r="80" fill="#6BE5D8" opacity="0.2" />
+    <circle cx="600" cy="200" r="100" fill="#91ECE2" opacity="0.2" />
+    <circle cx="400" cy="500" r="120" fill="#B7F3EC" opacity="0.2" />
+    
+    <!-- Abstract shapes -->
+    <path d="M100,400 Q150,350 200,400 T300,400 T400,400 T500,400" stroke="#6BE5D8" stroke-width="3" fill="none" />
+    <path d="M700,300 Q650,250 600,300 T500,300 T400,300 T300,300" stroke="#91ECE2" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Text placeholders that will be replaced with actual content via JavaScript -->
+  <g id="text-group-1" transform="translate(150, 150)">
+    <text id="text-line-1" font-family="Fredoka, sans-serif" font-size="36" font-weight="bold" fill="#000">
+      <tspan x="0" y="0">Idea Mechanic</tspan>
+    </text>
+  </g>
+  
+  <g id="text-group-2" transform="translate(150, 300)">
+    <text id="text-line-2" font-family="Fredoka, sans-serif" font-size="36" font-weight="bold" fill="#000">
+      <tspan x="0" y="0">Digital Alchemist</tspan>
+    </text>
+  </g>
+  
+  <g id="text-group-3" transform="translate(150, 450)">
+    <text id="text-line-3" font-family="Fredoka, sans-serif" font-size="36" font-weight="bold" fill="#000">
+      <tspan x="0" y="0">Sherpa to the Luddites</tspan>
+    </text>
+  </g>
+</svg>

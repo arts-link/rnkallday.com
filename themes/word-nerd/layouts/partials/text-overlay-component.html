@@ -1,0 +1,87 @@
+{{ $text1 := .text1 | default "Idea Mechanic" }}
+{{ $text2 := .text2 | default "Digital Alchemist" }}
+{{ $text3 := .text3 | default "Sherpa to the Luddites" }}
+{{ $desc1 := .desc1 | default "" }}
+{{ $desc2 := .desc2 | default "" }}
+{{ $desc3 := .desc3 | default "" }}
+
+<div class="text-overlay-wrapper fade-in">
+  <div class="relative">
+    <img src="/images/abstract-bg.svg" alt="Abstract background" class="text-overlay-bg w-full h-auto">
+
+    <div class="text-overlay-content absolute top-0 left-0 w-full h-full flex flex-col justify-around py-8 px-4">
+      <div class="text-overlay-item fade-in flex flex-col items-center justify-center h-20 mx-auto w-full max-w-3xl">
+        <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">{{ $text1 }}</h3>
+        {{ if $desc1 }}
+        <p class="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-1">{{ $desc1 }}</p>
+        {{ end }}
+      </div>
+
+      <div class="text-overlay-item fade-in flex flex-col items-center justify-center h-20 mx-auto w-full max-w-3xl">
+        <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">{{ $text2 }}</h3>
+        {{ if $desc2 }}
+        <p class="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-1">{{ $desc2 }}</p>
+        {{ end }}
+      </div>
+
+      <div class="text-overlay-item fade-in flex flex-col items-center justify-center h-20 mx-auto w-full max-w-3xl">
+        <h3 class="text-3xl md:text-4xl font-bold text-black dark:text-white">{{ $text3 }}</h3>
+        {{ if $desc3 }}
+        <p class="text-sm md:text-base text-gray-700 dark:text-gray-300 mt-1">{{ $desc3 }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dark mode support -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if dark mode is enabled
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    const textOverlayItems = document.querySelectorAll('.text-overlay-item h3, .text-overlay-item p');
+
+    if (isDarkMode) {
+      textOverlayItems.forEach(item => {
+        if (item.tagName === 'H3') {
+          item.classList.add('text-white');
+          item.classList.remove('text-black');
+        } else {
+          item.classList.add('text-gray-300');
+          item.classList.remove('text-gray-700');
+        }
+      });
+    }
+
+    // Listen for dark mode changes
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'class') {
+          const isDarkMode = document.documentElement.classList.contains('dark');
+
+          textOverlayItems.forEach(item => {
+            if (item.tagName === 'H3') {
+              if (isDarkMode) {
+                item.classList.add('text-white');
+                item.classList.remove('text-black');
+              } else {
+                item.classList.add('text-black');
+                item.classList.remove('text-white');
+              }
+            } else {
+              if (isDarkMode) {
+                item.classList.add('text-gray-300');
+                item.classList.remove('text-gray-700');
+              } else {
+                item.classList.add('text-gray-700');
+                item.classList.remove('text-gray-300');
+              }
+            }
+          });
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+  });
+</script>

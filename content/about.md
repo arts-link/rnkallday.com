@@ -40,12 +40,13 @@ menu:
     weight: 2
 ---
 
-I tell stories, and I'm damn good at it because I tell them with intent and authenticity. To hell with false modesty.
+## Howdy, I’m Rian Kochel. I tell stories, and I’m damn good at it.
 
-My work spans across a wide variance - from art and culture to AI, sound design to ghostwritten memoirs. It can be found printed in magazines or lurking on the dusty plains of the internet.
+To hell with false modesty. It’s never done me any favors.
 
-Cussing at my laptop is part of my creative/learning process, and I'm always making something. You can find me at the crossroads of tradition and progress, watching the world evolve and dragging the skeptics along for the ride.
+I’ve washed dishes with ex-convicts, raised millions for the arts, led marketing departments for tech startups, and learned that the only real job security is curiosity.
 
-I've washed dishes with ex-convicts, raised millions for the arts, led marketing efforts for tech startups, and learned that the only real job security is curiosity. While I ponder what waits beyond the horizon for this ear of tech, I don't believe AI can steal your soul. But, I'm certain it can make you forget you had one. I write to remind you of this.
+As I drag the skeptics across the intersection of tech and tradition, I don't believe AI can steal your soul, but there's clear evidence it's already convincing people that they don't need one to create compelling art of any discipline. I write to remind the world that words are magic.
 
-I'm that guy with the untamed mohawk and worn-in 501s on your morning train. I'll also be that guy in a finely tailored tux you'll see at the opera tonight. That guy you swear you know from somewhere. And when you blink during your double take, you might just see yourself reflected in my work.
+I’m that guy with the untamed mohawk and worn-in 501s on your morning train. I’ll also be that guy in a finely tailored tux at the opera tonight. That guy you swear you know from somewhere. And when you blink during your double take, you might just see yourself reflected in my work.
+

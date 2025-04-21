@@ -40,9 +40,7 @@ menu:
     weight: 2
 ---
 
-## Howdy, I’m Rian Kochel. I tell stories, and I’m damn good at it.
-
-To hell with false modesty. It’s never done me any favors.
+## Howdy, I’m Rian Kochel. I tell stories, and I’m damn good at it..to hell with false modesty. It’s never done me any favors.
 
 I’ve washed dishes with ex-convicts, raised millions for the arts, led marketing departments for tech startups, and learned that the only real job security is curiosity.
 

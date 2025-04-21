@@ -1,0 +1,15 @@
+[goldmark]
+  [goldmark.renderer]
+    unsafe = true  # Allow raw HTML in markdown files
+
+[highlight]
+  codeFences = true
+  guessSyntax = false
+  lineNos = false
+  noClasses = false
+  style = "monokai"
+
+[tableOfContents]
+  endLevel = 3
+  ordered = false
+  startLevel = 2

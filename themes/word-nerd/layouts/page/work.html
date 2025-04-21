@@ -46,17 +46,26 @@
         >
           Visual
         </button>
+        <button
+          type="button"
+          @click="activeFilter = 'web-archives'"
+          :class="activeFilter === 'web-archives' ? 'bg-turquoise text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
+          class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
+        >
+          Web Archives
+        </button>
       </div>
     </div>
 
     <!-- Work Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-data="{ activeFilter: 'all' }">
-      {{ range (where .Site.RegularPages "Section" "in" (slice "written-words" "audio-visual")) }}
+      {{ range (where .Site.RegularPages "Section" "in" (slice "written-words" "audio-visual" "web-archives")) }}
       <div
         x-show="activeFilter === 'all' ||
                (activeFilter === 'written' && '{{ .Section }}' === 'written-words') ||
                (activeFilter === 'audio' && '{{ .Section }}' === 'audio-visual' && '{{ with .Params.type }}{{ . }}{{ else }}visual{{ end }}' === 'audio') ||
                (activeFilter === 'visual' && '{{ .Section }}' === 'audio-visual' && '{{ with .Params.type }}{{ . }}{{ else }}visual{{ end }}' === 'visual') ||
+               (activeFilter === 'web-archives' && '{{ .Section }}' === 'web-archives') ||
                '{{ with .Params.category }}{{ . }}{{ else }}uncategorized{{ end }}' === activeFilter"
         class="bg-gray-800 dark:bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-[1.01] transition-transform duration-300 fade-in"
         x-transition:enter="transition ease-out duration-300"

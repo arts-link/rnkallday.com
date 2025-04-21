@@ -33,10 +33,7 @@ This portfolio site is built with Hugo and TailwindCSS, featuring a custom theme
 ### Core Sections
 
 1. **Homepage/Hero**: Compelling introductory section with a 30-second repeating video
-2. **About**: Biography with interactive UI component highlighting tech skills and three professional themes:
-   - Idea Mechanic
-   - Digital Alchemist
-   - Sherpa to the Luddites
+2. **About**: Biography with interactive UI component highlighting tech skills
 3. **Work**: Card-based layout for portfolio items with animations
 4. **Contact**: Responsive contact form with validation
 

@@ -1,7 +1,7 @@
 ---
 title:  About
 layout: "about"
-profile_image: "/images/rian-profile.jpg"
+profile_image: "/images/rian-profile.png"
 skills:
   writing:
     - name: "Content Strategy"

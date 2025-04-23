@@ -1,5 +1,5 @@
 # Image Assets
-
+icgfu   
 Place your image files in this directory. For the about page, you'll need a profile image named `rian-profile.jpg`.
 
 ## Required Images

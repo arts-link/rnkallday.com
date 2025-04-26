@@ -1,54 +1,116 @@
-# Word Nerd: A Portfolio of Multimedia Work by Rian Kochel
+rnkallday.com
 
-[![Build Status](https://github.com/arts-link/rnkallday.com/actions/workflows/hugo-deploy.yml/badge.svg)](https://github.com/arts-link/rnkallday.com/actions/workflows/hugo-deploy.yml)
+My personal portfolio site built with Hugo, Tailwind CSS, AlpineJS and deployed via GitHub Actions to https://rnkallday.com
 
-A modern, responsive Hugo website that showcases written, audio, and visual storytelling with smooth animations and dark mode support.
+📌 Live Demo
 
-## Overview
+https://rnkallday.com
 
-This portfolio site is built with Hugo and TailwindCSS, featuring a custom theme called "Word Nerd" that emphasizes clean design, accessibility, and multimedia content presentation.
+🚀 Core Sections
 
-### Design System
+Homepage/Hero
 
-**Colors:**
-- Primary: Turquoise Blue (#6BE5D8)
-- Supporting color palette derived from the primary color
+Full-viewport, looping 30-second video background
 
-**Fonts:**
-- Headings: Montserrat
-- Body: Inter
+Subtle overlay text and “scroll” hint
 
-## Goals & Objectives
+About
 
-- **Modernize the Design**: Clean, minimal design with TailwindCSS for rapid styling and customization
-- **Multimedia Content**: Seamless display of written work, embedded audio, and video assets
-- **Personalize Design Elements**: Custom graphics, illustrations, and animations
-- **Interactive Features**: Micro-animations and interactive UI elements
-- **Responsive & Accessible**: WCAG 2.1 AA compliance and excellent performance on all devices
-- **Easy Content Management**: Hugo's markdown and asset pipelines for quick updates
-- **GitHub Pages Deployment**: Automated deployment via GitHub Actions
+Bio with interactive skill-bars (AlpineJS)
 
-## Features & Technical Requirements
+Clickable tool-tips on each tech badge
 
-### Core Sections
+Work
 
-1. **Homepage/Hero**: Compelling introductory section with a 30-second repeating video
-2. **About**: Biography with interactive UI component highlighting tech skills
-3. **Work**: Card-based layout for portfolio items with animations
-4. **Contact**: Responsive contact form with validation
+Card-based portfolio gallery
 
-### Technical Implementation
+Hover/focus animations (fade-in, slide-up)
 
-- **Design System**: Custom TailwindCSS utilities for the turquoise color palette
-- **Animations**: Fade-in, slide-up/slide-down for dynamic visuals
-- **JavaScript**: AlpineJS for interactive components
-- **Build Process**: GitHub Actions workflow for automated builds and deployment
+Contact
 
+Responsive form with HTML5 + JS validation
 
-```bash
-# Install dependencies
+Success/error feedback modals
+
+🎨 Design & Interactivity Source
+
+This site’s typography, color scheme, and scrolling effects are adapted directly from Filip Z’s CodePen example: https://codepen.io/filipz/pen/qEBoPWz.
+
+Font: Imported from the Pen’s CSS
+
+Color Palette: Turquoise accents and gradients matching the Pen
+
+Scroll Animations: Smooth scroll and section reveal functions taken from the Pen’s JS logic
+
+🛠 Technical Implementation
+
+Design System
+
+Custom Tailwind CSS utilities powered by /assets/css/custom.properties
+
+Turquoise-accent color palette (aligned with the CodePen source)
+
+Animations
+
+Fade-in on scroll (Intersection Observer + AlpineJS)
+
+Slide-up/slide-down transitions via Tailwind’s transition-* classes
+
+Smooth scrolling behavior based on CodePen’s script
+
+Interactivity
+
+AlpineJS for toggles, tool-tips, and skill-bar animations
+
+Build & Deployment
+
+Local preview:
+
+npm install
+hugo server -D
+
+Automated CI/CD via GitHub Actions:.github/workflows/deploy.yml builds with Hugo, then publishes public/ to the github-pages environment.
+
+📦 Installation & Local Development
+
+Clone the repo
+
+git clone git@github.com:arts-link/rnkallday.com.git
+cd rnkallday.com
+
+Install dependencies
+
 npm install
 
-# Start development server
+Run Hugo
+
 hugo server -D
-```
+# → http://localhost:1313
+
+Make changes, then
+
+git add .
+git commit -m "Describe your change"
+git push origin main
+
+🔖 Topics & Keywords
+
+Add these in your repo’s Settings → “About” box under Topics:
+
+hugo, tailwindcss, alpinejs, github-actions, portfolio, static-site
+
+And in Settings → “About” → Description, paste:
+
+Personal portfolio site powered by Hugo • Tailwind CSS • AlpineJS • GitHub Actions • CodePen-inspired scroll & design
+
+🤝 Contributing
+
+Fork the repo
+
+Create a feature branch (git checkout -b feat/my-feature)
+
+Commit & PR
+
+I’ll review, merge, and your changes will go live automatically!
+
+Built with 🤬😭🫠😰❤️ by Rian Kochel

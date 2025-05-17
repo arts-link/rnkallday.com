@@ -40,31 +40,9 @@
 </script>
 {{ end }}
 
-<!-- Animation scripts -->
-<script>
-  // Intersection Observer for animations
-  document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .slide-down');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    animatedElements.forEach(element => {
-      observer.observe(element);
-    });
-  });
-</script>
-
-<!-- Navigation script -->
-{{ $navigation := resources.Get "js/navigation.js" | resources.Minify }}
-<script src="{{ $navigation.RelPermalink }}"></script>
+<!-- Scroll behavior and animations script -->
+{{ $scrollBehavior := resources.Get "js/scroll-behavior.js" | resources.Minify }}
+<script src="{{ $scrollBehavior.RelPermalink }}"></script>
 
 <!-- GSAP for animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

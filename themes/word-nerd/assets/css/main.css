@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling and snap behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
 /* Custom components */
 @layer components {
   .responsive-iframe-container {

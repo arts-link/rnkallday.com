@@ -1,6 +1,6 @@
 baseURL= "https://rnkallday.com/"
 languageCode= "en-us"
-title= "Word Nerd: A portfolio of multimedia work by Rian Kochel"
+title= "Portfolio: Multimedia work by Rian Kochel"
 theme= ["word-nerd"]
 summaryLength = 15
 enableRobotsTXT = true

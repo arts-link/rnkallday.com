@@ -122,7 +122,7 @@
 
 /* Custom styles */
 .text-gradient {
-  @apply text-transparent bg-clip-text bg-gradient-to-r from-turquoise-600 to-turquoise-400;
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-400;
 }
 
 /* Navigation styles */
@@ -147,7 +147,7 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: theme('colors.turquoise.DEFAULT');
+  background-color: theme('colors.accent.DEFAULT');
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -164,7 +164,7 @@
 
 /* Accessibility focus styles */
 a:focus, button:focus {
-  @apply outline-none ring-2 ring-turquoise-500 ring-offset-2;
+  @apply outline-none ring-2 ring-accent-500 ring-offset-2;
 }
 
 /* Dark mode transition */

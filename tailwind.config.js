@@ -7,7 +7,7 @@ module.exports = {
     "./layouts/**/*.html",
     "./config/**/*.toml",
     "./content/**/*.md",
-    "./themes/word-nerd/layouts/**/*.html",
+    "./themes/portfolio/layouts/**/*.html",
   ],
   darkMode: 'class',
   theme: {

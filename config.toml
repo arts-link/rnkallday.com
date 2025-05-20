@@ -94,13 +94,14 @@ ignoreLogs = ["warning-goldmark-raw-html"]
 [build]
   writeStats = true
 
-  [[build.cachebusters]]
+[[build.cachebusters]]
 source = "assets/watching/hugo_stats.json"
 target = "styles.css"
 
-101|   [[build.cachebusters]]
-102|     source = "(postcss|tailwind).config.js"
-103|     target = "css"
+[[build.cachebusters]]
+source = "(postcss|tailwind).config.js"
+target = "css"
+
 [[build.cachebusters]]
 source = "assets/.*\\.(js|ts|jsx|tsx)"
 target = "js"

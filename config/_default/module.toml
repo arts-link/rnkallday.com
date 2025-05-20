@@ -1,9 +1,0 @@
-[hugoVersion]
-  extended = true
-  min = "0.138.0"
-[[mounts]]
-  source = "assets"
-  target = "assets"
-[[mounts]]
-  source = "hugo_stats.json"
-  target = "assets/watching/hugo_stats.json"

@@ -1,6 +1,0 @@
-# PLACE ANY CONFIG HERE THAT IS ONLY FOR PRODUCTION ENVIRONMENT
-baseURL= "https://rnkallday.com"
-
-[params]
-  plausible_domain = "rnkallday.com"
-  plausible_advanced = true

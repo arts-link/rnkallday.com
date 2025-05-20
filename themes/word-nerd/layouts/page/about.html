@@ -24,7 +24,8 @@
           {{ end }}
         </div>
         <div class="md:w-2/3 slide-up">
-          <div class="prose prose-lg prose-invert dark:prose-normal text-white dark:text-gray-900">
+          <!-- Styling for typography with large text and dark mode support -->
+          <div class="prose prose-lg text-white dark:text-gray-900">
             {{ .Content }}
           </div>
         </div>
@@ -41,12 +42,19 @@
       src="https://spark.githubnext.com/embed/rfi0arWRUDe8SDm2G6jG3"
       width="640"
       height="180"
-      style="border:0;overflow:hidden"
+      class="iframe-style"
       allowtransparency="true"
       allowfullscreen="true"
-      loading="lazy"
       title="GitHub Spark"
     ></iframe>
+    <script>
+      if (!('loading' in HTMLIFrameElement.prototype)) {
+        const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+        iframes.forEach(iframe => {
+          iframe.src = iframe.dataset.src;
+        });
+      }
+    </script>
   </div>
 </section>
   </div>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- CSS -->
+    {{ $css := resources.Get "css/main.css" | css.PostCSS }}
+    {{ if hugo.IsProduction }}
+        {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Swiper for Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Left Menu -->
+    <div class="left-menu">
+        <div class="left-menu-top">
+            <button type="button" class="menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="left-menu-middle">
+            <div class="logo">WORD NERD</div>
+        </div>
+        <div class="section-nav">
+            <a class="section-nav-item" data-index="0">
+                <span class="section-nav-item-number">01</span>
+                <span>Hero</span>
+            </a>
+            <a class="section-nav-item" data-index="1">
+                <span class="section-nav-item-number">02</span>
+                <span>About</span>
+            </a>
+            <a class="section-nav-item" data-index="2">
+                <span class="section-nav-item-number">03</span>
+                <span>About Continued</span>
+            </a>
+            <a class="section-nav-item" data-index="3">
+                <span class="section-nav-item-number">04</span>
+                <span>Work</span>
+            </a>
+            <a class="section-nav-item" data-index="4">
+                <span class="section-nav-item-number">05</span>
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="page-container">
+        <div class="horizontal-container">
+            <div class="panels-container">
+                {{ block "main" . }}{{ end }}
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="nav-text">SCROLL</div>
+        <div class="nav-progress">
+            <div class="nav-progress-fill"></div>
+        </div>
+        <div class="nav-text">01 / 05</div>
+    </div>
+
+    <!-- Main JavaScript -->
+    {{ $js := resources.Get "js/main.js" }}
+    {{ if hugo.IsProduction }}
+        {{ $js = $js | minify | fingerprint }}
+    {{ end }}
+    <script src="{{ $js.RelPermalink }}"></script>
+</body>
+</html>

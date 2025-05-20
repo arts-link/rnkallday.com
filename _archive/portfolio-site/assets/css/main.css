@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Boldnese';
+  src: url('/fonts/Boldnese.woff2') format('woff2'),
+       url('/fonts/Boldnese.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('/fonts/Fredoka-Regular.woff2') format('woff2'),
+       url('/fonts/Fredoka-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-black text-white font-fredoka;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-boldnese;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply min-h-screen w-full relative overflow-hidden;
+  }
+  
+  .hero-section {
+    @apply bg-black text-white;
+  }
+  
+  .about-section {
+    @apply bg-black text-white;
+  }
+  
+  .about-section h2 span {
+    @apply text-about-accent;
+  }
+  
+  .work-section {
+    @apply bg-black text-white;
+  }
+  
+  .work-section h2 span {
+    @apply text-work-accent;
+  }
+  
+  .contact-section {
+    @apply bg-black text-white;
+  }
+  
+  .contact-section h2 span {
+    @apply text-contact-accent;
+  }
+}
+
+/* GSAP Horizontal Scroll Layout */
+.page-container {
+  position: fixed;
+  top: 0;
+  left: 60px;
+  right: 0;
+  bottom: 0;
+  transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.horizontal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.panels-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  will-change: transform;
+}
+
+.panel {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Navigation */
+.left-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 60px;
+  background-color: #111;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.left-menu.expanded {
+  width: 250px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.menu-btn {
+  width: 24px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 200;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.menu-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.left-menu.expanded .menu-btn span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.left-menu.expanded .menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.left-menu.expanded .menu-btn span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Cascading Text Effect for About Section */
+.content {
+  --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
+}
+
+.content ul {
+  --font-level: 6;
+  display: flex;
+  line-height: 1.25;
+  width: 100%;
+  padding-left: 5rem;
+}
+
+.content ul li {
+  position: sticky;
+  top: calc(50% - 0.5lh);
+  font-size: inherit;
+  margin: 0;
+  display: inline-block;
+  height: fit-content;
+  font-weight: 600;
+}
+
+/* Carousel for Work Section */
+.carousel {
+  display: block;
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height: auto;
+  min-width: 0;
+  position: relative;
+}
+
+.card {
+  background: #161616;
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+.card-text {
+  background: inherit;
+  padding: 1.5rem;
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+.media-container {
+  aspect-ratio: 8 / 5;
+  display: grid;
+  position: relative;
+  width: 100%;
+}
+
+.media-container > * {
+  aspect-ratio: inherit;
+  grid-area: 1/-1;
+  position: relative;
+}
+
+.fit-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.fit-cover.middle-center {
+  background-position: 50% 50%;
+  object-position: 50% 50%;
+}

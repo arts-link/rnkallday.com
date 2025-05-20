@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Image Placeholder Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #6BE5D8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        button:hover {
+            background-color: #5ad0c3;
+        }
+        p {
+            max-width: 600px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profile Image Placeholder Generator</h1>
+    <p>This tool generates a placeholder profile image with your initials. Click "Download" to save the image as rian-profile.jpg and place it in the static/images directory.</p>
+    
+    <div class="controls">
+        <button id="generate">Generate New Style</button>
+        <button id="download">Download</button>
+    </div>
+    
+    <canvas id="canvas" width="400" height="400"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const generateBtn = document.getElementById('generate');
+        const downloadBtn = document.getElementById('download');
+        
+        const colors = [
+            '#6BE5D8', // Turquoise Blue
+            '#333333', // Dark Gray
+            '#555555', // Medium Gray
+            '#777777', // Light Gray
+            '#222222', // Almost Black
+        ];
+        
+        function getRandomColor() {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        function generatePlaceholder() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Background
+            const bgColor = getRandomColor();
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add some random shapes for visual interest
+            for (let i = 0; i < 5; i++) {
+                ctx.fillStyle = getRandomColor();
+                const size = Math.random() * 100 + 50;
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                
+                if (Math.random() > 0.5) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, size, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.fillRect(x - size/2, y - size/2, size, size);
+                }
+            }
+            
+            // Add initials
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 120px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('RK', canvas.width / 2, canvas.height / 2);
+        }
+        
+        generateBtn.addEventListener('click', generatePlaceholder);
+        
+        downloadBtn.addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.download = 'rian-profile.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.click();
+        });
+        
+        // Generate initial placeholder
+        generatePlaceholder();
+    </script>
+</body>
+</html>

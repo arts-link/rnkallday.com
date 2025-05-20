@@ -1,0 +1,19 @@
+{{ $trackID := .Get "id" }}
+{{ $color := .Get "color" | default "6BE5D8" }}
+{{ $autoplay := .Get "autoplay" | default "false" }}
+{{ $hideRelated := .Get "hideRelated" | default "true" }}
+{{ $showComments := .Get "showComments" | default "false" }}
+{{ $showUser := .Get "showUser" | default "false" }}
+{{ $showReposts := .Get "showReposts" | default "false" }}
+{{ $visual := .Get "visual" | default "true" }}
+
+<div class="soundcloud-embed my-6">
+  <iframe 
+    width="100%" 
+    height="{{ if eq $visual "true" }}300{{ else }}166{{ end }}" 
+    scrolling="no" 
+    frameborder="no" 
+    allow="autoplay" 
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ $trackID }}&color=%23{{ $color }}&auto_play={{ $autoplay }}&hide_related={{ $hideRelated }}&show_comments={{ $showComments }}&show_user={{ $showUser }}&show_reposts={{ $showReposts }}&show_teaser=true&visual={{ $visual }}">
+  </iframe>
+</div>

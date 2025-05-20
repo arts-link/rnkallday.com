@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RNK Portfolio Scroll</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      .section {
+        height: 100vh;
+        scroll-snap-align: start;
+        padding: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+
+      main {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="section" style="background:#111; color:white;">
+        <h1>Welcome to RNK</h1>
+      </section>
+
+      <section class="section" style="background:#eee;">
+        <h2>Scroll Section 2</h2>
+      </section>
+
+      <section class="section" style="background:#cfcfcf;">
+        <h2>Scroll Section 3</h2>
+      </section>
+    </main>
+  </body>
+</html>

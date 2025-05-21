@@ -1,4 +1,3 @@
-# GitHub Actions workflow for building and deploying Hugo site to GitHub Pages
 on:
   push:
     branches:
@@ -34,7 +33,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: \${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
           cname: rnkallday.com

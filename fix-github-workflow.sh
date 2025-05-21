@@ -1,3 +1,14 @@
+#!/bin/zsh
+# fix-github-workflow.sh
+# This script creates a new GitHub Actions workflow file with correct YAML syntax
+
+set -e
+
+echo "Creating backup of original workflow file..."
+cp -f .github/workflows/deploy.yml .github/workflows/deploy.yml.bak
+
+echo "Creating fixed GitHub Actions workflow file..."
+cat > .github/workflows/deploy-fixed.yml << 'EOF'
 # GitHub Actions workflow for building and deploying Hugo site to GitHub Pages
 on:
   push:
@@ -34,7 +45,16 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: \${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
           cname: rnkallday.com
+EOF
+
+echo "Fixed workflow file created at .github/workflows/deploy-fixed.yml"
+echo ""
+echo "To apply the fix, run:"
+echo "mv .github/workflows/deploy-fixed.yml .github/workflows/deploy.yml"
+echo ""
+echo "Or to verify first:"
+echo "diff .github/workflows/deploy.yml .github/workflows/deploy-fixed.yml"

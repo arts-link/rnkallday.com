@@ -1,4 +1,5 @@
-# GitHub Actions workflow for building and deploying Hugo site to GitHub Pages
+name: Deploy Hugo Site to GitHub Pages
+
 on:
   push:
     branches:
@@ -8,10 +9,10 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js (for PostCSS/Tailwind)

@@ -1,0 +1,24 @@
+# GitHub Conflict Resolution Steps
+
+Copy and paste these commands one at a time into your terminal:
+
+# Step 1: Make sure you're in the repository directory
+cd /Users/riankochel/rnkallday.com
+
+# Step 2: Pull the latest changes
+git pull origin main
+
+# Step 3: Switch to the fix branch
+git checkout fix/use-theme-scrolling-homepage 2>/dev/null || git checkout -b fix/use-theme-scrolling-homepage origin/fix/use-theme-scrolling-homepage
+
+# Step 4: Merge the main branch into your fix branch
+git merge main
+
+# If there are conflicts, resolve them in your editor, then:
+# git add .
+# git commit -m "Resolve merge conflicts"
+
+# Step 5: Push your changes
+git push -u origin fix/use-theme-scrolling-homepage
+
+# Now go back to GitHub and your PR should be updated with resolved conflicts

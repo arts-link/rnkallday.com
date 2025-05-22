@@ -1,15 +1,15 @@
-name: Deploy Hugo Site
-
+# GitHub Actions workflow for building and deploying Hugo site to GitHub Pages
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.139.2'
+          hugo-version: 'latest'
           extended: true
 
       - name: Build site

@@ -5,3 +5,25 @@
 
 /* Import theme CSS */
 @import "/themes/word-nerd/assets/css/main.css";
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* Adjust if you want a different hero height */
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none; /* Allows content on top to be clickable */
+}
+
+/* Optional: Remove default margin/padding for full-bleed effect */
+html, body {
+  margin: 0;
+  padding: 0;
+}

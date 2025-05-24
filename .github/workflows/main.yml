@@ -3,10 +3,10 @@ name: Deploy Hugo Site to GitHub Pages
 on:
   push:
     branches:
-      - main      # Deploy only on changes to main branch
+      - main
 
 permissions:
-  contents: write # Required for gh-pages deploy
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -16,28 +16,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Set up Node.js for future JS/React assets (npm install etc)
       - name: Setup Node.js (for PostCSS/Tailwind/JS/React)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Install npm dependencies (edit as needed for your site)
       - name: Install dependencies
         run: npm install
 
-      # Set up Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
 
-      # Build the Hugo site
       - name: Build site
         run: hugo --minify
 
-      # Check for README.md in the public directory (prevents accidental deploy)
       - name: Check for README.md in public directory
         run: |
           set -e
@@ -55,7 +50,6 @@ jobs:
             exit 1
           fi
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -63,3 +57,4 @@ jobs:
           publish_dir: ./public
           publish_branch: gh-pages
           cname: rnkallday.com
+          force_orphan: true

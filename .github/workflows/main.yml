@@ -1,0 +1,65 @@
+name: Deploy Hugo Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main      # Deploy only on changes to main branch
+
+permissions:
+  contents: write # Required for gh-pages deploy
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Set up Node.js for future JS/React assets (npm install etc)
+      - name: Setup Node.js (for PostCSS/Tailwind/JS/React)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Install npm dependencies (edit as needed for your site)
+      - name: Install dependencies
+        run: npm install
+
+      # Set up Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      # Build the Hugo site
+      - name: Build site
+        run: hugo --minify
+
+      # Check for README.md in the public directory (prevents accidental deploy)
+      - name: Check for README.md in public directory
+        run: |
+          set -e
+          found=0
+          shopt -s nocaseglob
+          for f in public/README.md public/readme.md public/Readme.md public/readme.MD public/README.MD
+          do
+            if [ -f "$f" ]; then
+              echo "::error::Found $f in the public directory. This file should not be deployed."
+              found=1
+            fi
+          done
+          shopt -u nocaseglob
+          if [ "$found" -eq 1 ]; then
+            exit 1
+          fi
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          cname: rnkallday.com

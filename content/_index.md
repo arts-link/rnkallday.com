@@ -5,4 +5,3 @@ menu:
     weight: 1
 ---
 
-Welcome to my portfolio! I'm a multimedia storyteller passionate about crafting compelling narratives through various formats.

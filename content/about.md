@@ -44,6 +44,24 @@ Howdy, I'm Rian Kochel. I tell stories. Sometimes I use words, other times I use
 
 I've washed dishes with ex-convicts, raised millions for the arts, led marketing departments for tech startups, and learned that the only real job security is curiosity.
 
-I drag the skeptics across the intersection of tech and tradition so they will see with their own eyes that AI can't  account for the fickle nature of style or taste, nor the fickle humans that posses it. Just as those without style or taste will never understand AI can't create it. I write to remind you of this.
+I drag the skeptics across the intersection of tech and tradition so they will see with their own eyes that AI can't account for the fickle nature of style or taste, nor the fickle humans that possess it.
 
-I'm that guy with the untamed mohawk and worn-in 501s on your morning train. I'll also be that guy in a finely tailored tux at the opera tonight. That guy you swear you know from somewhere. And when you blink during your double take, you might just see yourself reflected in my work.
+I'm that guy with the untamed mohawk and worn-in 501s on your morning train. I'll also be that guy in a finely tailored tux at the opera tonight. That guy you swear you know from somewhere. And when you remember, you'll smile.
+
+---
+
+## GitHub Spark
+
+<div align="center">
+
+<iframe
+  src="https://spark.githubnext.com/embed/66d05b64-03ec-4768-8204-7f43c46efc77"
+  width="640"
+  height="180"
+  allowtransparency="true"
+  allowfullscreen="true"
+  title="GitHub Spark"
+  style="border:none;"
+></iframe>
+
+</div>

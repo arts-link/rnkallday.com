@@ -4,7 +4,6 @@
 @import "tailwindcss/utilities";
 
 /* Import theme CSS */
-@import "/themes/word-nerd/assets/css/main.css";
 .hero-section {
   position: relative;
   width: 100vw;

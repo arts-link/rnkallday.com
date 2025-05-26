@@ -2,7 +2,7 @@
 baseURL = "https://rnkallday.com/"
 languageCode = "en-us"
 title = "Portfolio: Multimedia work by Rian Kochel"
-theme = "word-nerd"
+theme = "portfolio"
 summaryLength = 15
 enableRobotsTXT = true
 copyright = "©️ Rian Kochel 2024"

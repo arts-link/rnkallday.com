@@ -115,4 +115,17 @@ I’ll review, merge, and your changes will go live automatically!
 
 Built with 🤬😭🫠😰❤️ by Rian Kochel
 
+## 📝 Changelog
+
+### 2025-06-27 - YouTube Hero Video Implementation
+- **MAJOR:** Replaced local MP4 hero video with full-bleed YouTube embed
+- **Added:** Auto-playing, muted, looping YouTube video background (`VLvVNMbQIRY`)
+- **Updated:** Hero section HTML structure for full-screen video display
+- **Added:** `.video-responsive` CSS class for responsive iframe embeds
+- **Enhanced:** YouTube embed with playlist, loop, autoplay, and mute parameters
+- **Improved:** Hero video now covers entire viewport as background layer
+- **Files modified:**
+  - `themes/portfolio/layouts/index.html` - Hero section restructure
+  - `themes/portfolio/assets/css/main.css` - Added video-responsive styles
+
 <!-- Trigger workflow -->

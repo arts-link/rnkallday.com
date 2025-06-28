@@ -54,7 +54,7 @@ For development purposes, you can temporarily modify your templates to bypass Po
 
 In `themes/word-nerd/layouts/partials/head/head.html`, change:
 ```html
-{{ $css := resources.Get "css/main.css" | resources.PostCSS }}
+{{ $css := resources.Get "css/main.css" | css.PostCSS }}
 ```
 
 To:

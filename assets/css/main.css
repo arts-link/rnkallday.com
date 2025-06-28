@@ -1,13 +1,15 @@
-/* Import Tailwind CSS */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Import theme CSS */
+/* Custom styles below (optional) */
+@import "./extended/custom.css";
+
+/* Example custom hero adjustments (optional, edit/remove as needed) */
 .hero-section {
   position: relative;
   width: 100vw;
-  height: 100vh; /* Adjust if you want a different hero height */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -18,10 +20,9 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  pointer-events: none; /* Allows content on top to be clickable */
+  pointer-events: none;
 }
 
-/* Optional: Remove default margin/padding for full-bleed effect */
 html, body {
   margin: 0;
   padding: 0;

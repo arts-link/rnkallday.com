@@ -46,4 +46,4 @@ I've washed dishes with ex-convicts, raised millions for the arts, led marketing
 
 I drag the skeptics across the intersection of tech and tradition so they will see with their own eyes that AI can't account for the fickle nature of style or taste, nor the fickle humans that possess it.
 
-I'm that guy with the untamed mohawk and worn-in 501s on your morning train. I'll also be that guy in a finely tailored tux at the opera tonight. That guy you swear you know from somewhere. And when you remember, you'll smile.
+I'm that guy with the untamed mohawk and worn-in 501s on your morning train. I'll also be that guy in a finely tailored tux at the opera tonight. That guy you swear you know from somewhere. And when you blink, you might see yourself reflectecd in my work.

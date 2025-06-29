@@ -19,15 +19,13 @@ summary = "Website copy, marketing materials, and promotional content I've creat
 
 I've had a hand in virtually every page of these websites:
 
-- [seattle art museum](https://www.seattleartmuseum.org/)
 - [Mohai](https://mohai.org/?utm_source=ad_grant&amp;utm_medium=ad_grant&amp;utm_campaign=national&amp;gclid=CjwKCAiA-vOsBhAAEiwAIWR0TWiuj2Gcum4jeufmSv-Yw2i5P-QaBGG9TUgUUAQgojwSl8fvbaCBmBoCieYQAvD_BwE)
-- [Paretohealth](https://paretohealth.com/)
+- [Paretohealth](https://paretohealth.com/https://paretohealth.com/resources/)
 
 ## Ghostwriting / Bios
 
 {{< pass >}}
 
-- [BIO](https://www.greenscreens.tv/post/leading-in-crisis-an-interview-with-shawn-cutter-ceo)
 - [Blog](https://paretohealth.com/blog/dispelling-the-myths-of-self-insurance/)
 - [fundraising appeal](https://drive.google.com/file/d/1hsPgdvU72RnWHDr3ffwznjVnzz9wLLze/view?usp=sharing)
 
@@ -38,7 +36,6 @@ I've had a hand in virtually every page of these websites:
 {{< pass >}}
 
 - [landing page](https://paretohealth.com/podcast/)
-- [blog](https://www.greenscreens.tv/post/talking-to-kids-about-underage-cannabis-use-2)
 - [annual reporting](https://drive.google.com/file/d/1gSb47x71UZJvmZIx95NB8iFnaAR0INOs/view?usp=sharing)
 - [career page](https://paretohealth.com/careers-at-paretohealth/)
 - [white paper](https://paretohealth.com/wp-content/uploads/2022/10/CFO_WhitePaper_FNL.pdf)

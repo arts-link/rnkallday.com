@@ -1,0 +1,79 @@
+main {
+    position: relative;
+    min-height: 200vh;
+    margin: 3vh 0em;
+  }
+
+  @keyframes anim-svgStroke {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes anim-opacity {
+    to {
+      opacity: 0;
+    }
+  }
+
+  .frame {
+    position: sticky;
+    display: flex;
+    top: 10%;
+
+    aspect-ratio: 1 / 1;
+
+    border: solid 1em var(--color-dark);
+    border-radius: .25em;
+    z-index: 1;
+
+    svg {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      fill: none;
+      overflow: visible;
+    }
+
+    @supports (animation-timeline: scroll()) {
+      #cutLayer {
+        /* While we could hard-code these values, we'll let JS handle that */
+        /* stroke-dashoffset: 15629.115234375; */
+        /* stroke-dasharray: 15629.115234375; */
+
+        animation: anim-svgStroke linear forwards;
+        animation-timeline: scroll();
+        animation-range: entry 0% exit 100%;
+      }
+
+      #cutGroup {
+        animation: anim-opacity linear forwards;
+        animation-timeline: scroll();
+        animation-range: entry 96% exit 100%;
+      }
+    }
+
+    @supports not (animation-timeline: scroll()) {
+      /* A little message for folks on browsers that don't support this */
+      &::after {
+        position: absolute;
+        top: 0;
+        content: "🚫 Sorry, animation-timeline: scroll() isn't supported in this browser. But you can hover instead 😊";
+        width: 50ch;
+        font-size: var(--step--2);
+        background: var(--color-light);
+        background-image: var(--texture-noise);
+        padding: .5em;
+        border-radius: .25em;
+      }
+
+      /* And let's give them the ability to see it on hover */
+      &:hover #cutLayer {
+        animation: anim-svgStroke 3.5s ease-in-out both;
+      }
+
+      &:hover #cutGroup {
+        animation: anim-opacity 1s ease-in-out both;
+        animation-delay: 3.5s;
+      }
+    }
+  }

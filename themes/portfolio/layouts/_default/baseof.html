@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" class="{{ if .Site.Params.showDarkToggle }}dark:bg-gray-900{{ end }} scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ partial "head/head.html" . }}
+    {{ block "head" . }}{{ end }}
+</head>
+<body class="flex flex-col min-h-screen {{ if .Site.Params.showDarkToggle }}dark:bg-gray-900 dark:text-white transition-colors duration-300{{ end }}">
+    <main class="flex-grow">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "scripts.html" . }}
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>

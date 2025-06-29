@@ -1,0 +1,119 @@
+baseURL = "https://rnkallday.com/"
+languageCode = "en-us"
+title = "Portfolio: Multimedia work by Rian Kochel"
+theme = "portfolio"
+summaryLength = 15
+enableRobotsTXT = true
+copyright = "©️ Rian Kochel 2024"
+enableEmoji = true
+enableGitInfo = true
+ignoreLogs = ["warning-goldmark-raw-html"]
+
+# Params
+[params]
+  plausible_domain = "rnkallday.com"
+  plausible_advanced = true
+  description = "A portfolio of multimedia work by Rian Kochel"
+  TocOpen = true
+  UseHugoToc = true
+  navbar_fixed = true
+  excludedTags = ["excluded"]
+  showDate = false
+  showAuthor = true
+  showHomeFeed = false
+  headerType = "portfolio"
+  showDarkToggle = true
+  showShareButtons = true
+  showReadOn = false
+  loadLeaflet = false
+  og_image_default = "common-partials/opengraph/opengraph-base.png"
+  logo_firstWord = "Portfolio"
+  logo_lastWord = ""
+  logo_tagline = "MULTIMEDIA WORK BY RIAN KOCHEL"
+  logo_fontClass = "font-titillium"
+  repository = "https://github.com/arts-link/rnkallday.com"
+
+  [params.ogImageText]
+    x = 50
+    y = 475
+    fontName = "opengraph-font"
+
+  [params.shareButtons]
+    networks = ["twitter", "email", "reddit", "facebook"]
+    size = "small"
+    icon = "solid"
+    buttonMargin = "0.2em"
+
+  [params.author]
+    email = "riankochel@gmail.com"
+    name = "Rian Kochel"
+
+  [params.footer]
+    tagCloud = true
+
+  [params.twClasses]
+    # You can define Tailwind classes here if needed
+
+[pagination]
+  pagerSize = 12
+
+# Hugo Version requirement
+[hugoVersion]
+  extended = true
+  min = "0.138.0"
+
+# Mounts
+[[mounts]]
+  source = "assets"
+  target = "assets"
+
+[[mounts]]
+  source = "hugo_stats.json"
+  target = "assets/watching/hugo_stats.json"
+
+# Goldmark and syntax highlighting
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    lineNos = false
+    noClasses = false
+    style = "monokai"
+
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+# Build settings with cachebusters
+[build]
+  writeStats = true
+
+[caches]
+  [caches.images]
+    dir = ':resourceDir/_gen'
+    maxAge = '1440m'
+  [caches.assets]
+    dir = ':resourceDir/_gen'
+    maxAge = '1440m'
+
+[[build.cachebusters]]
+source = "assets/watching/hugo_stats.json"
+target = "styles.css"
+
+[[build.cachebusters]]
+source = "(postcss|tailwind).config.js"
+target = "css"
+
+[[build.cachebusters]]
+source = "assets/.*\\.(js|ts|jsx|tsx)"
+target = "js"
+
+[[build.cachebusters]]
+source = "assets/.*\\.(.*)$"
+target = "$1"
+

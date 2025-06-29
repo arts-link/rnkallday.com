@@ -1,0 +1,75 @@
+/* RNK NAV */
+main {
+  @apply p-2;
+  header {
+    h1 {
+      @apply text-6xl;
+    }
+  }
+    p {
+      @apply text-2xl;
+    }
+}
+.home {
+  .articleBody {
+    h2 {
+      @apply text-6xl;
+      @apply text-center
+    }
+    p {
+      @apply text-2xl;
+      @apply text-center
+    }
+  }
+}
+.articleBody {
+  h2 {
+    @apply text-4xl;
+  }
+  p {
+    @apply text-xl;
+  }
+}
+
+.rnk-nav {
+  .main-menu-nav {
+    .main-menu-ul {
+      @apply bg-transparent;
+      @apply flex space-x-4;
+      @apply w-full;
+      @apply m-3;
+      @apply text-nowrap;
+      @apply rounded-lg;
+    }
+    .main-menu-ul > li {
+      @apply bg-neutral-900;
+      @apply text-white;
+      @apply p-5;
+      @apply rounded-md;
+    }
+    .main-menu-ul li .active,
+    .main-menu-ul li .ancestor  {
+      /* @apply border-b border-lime-800; */
+      @apply text-white;
+    }
+    .main-menu-child-ul {
+     @apply ml-0 p-0;
+     @apply bg-neutral-900 rounded-lg cursor-pointer;
+    }
+    .main-menu-child-ul > li {
+      @apply border-b border-sky-800;
+    }
+
+    .child-nav-container {
+      @apply flex flex-row items-center cursor-pointer;
+    }
+    .child-nav-icon {
+      @apply ml-1 text-base;
+    }
+    .child-ul-container {
+      @apply absolute top-7 -right-2 pt-5;
+      @apply min-w-40 max-w-52 md:max-w-60;
+      @apply hidden;
+    }
+  }
+}

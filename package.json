@@ -1,0 +1,27 @@
+{
+  "name": "rnkallday-com",
+  "version": "1.0.0",
+  "description": "Personal portfolio site",
+  "scripts": {
+    "build": "hugo --gc --minify",
+    "dev": "hugo server -D --noHTTPCache",
+    "update-browserslist": "npx update-browserslist-db@latest"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "autoprefixer": "^10.4.16",
+    "tailwindcss": "^3.3.5",
+    "@tailwindcss/typography": "^0.5.10",
+    "postcss-import": "^16.0.0"
+  },
+  "dependencies": {
+    "@alpinejs/focus": "^3.13.7",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "alpinejs": "^3.13.7",
+    "leaflet": "^1.9.4"
+  }
+}

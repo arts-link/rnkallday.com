@@ -1,0 +1,55 @@
+<!-- Dark mode toggle script -->
+{{ if .Site.Params.showDarkToggle }}
+<script>
+  // Set initial state of dark mode
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    localStorage.theme = 'dark';
+  } else {
+    document.documentElement.classList.remove('dark');
+    localStorage.theme = 'light';
+  }
+
+  // Add event listener to toggle button
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function() {
+        if (localStorage.theme === 'dark') {
+          document.documentElement.classList.remove('dark');
+          localStorage.theme = 'light';
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.theme = 'dark';
+        }
+      });
+    }
+
+    // Mobile menu toggle
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) {
+          mobileMenu.classList.toggle('hidden');
+        }
+      });
+    }
+  });
+</script>
+{{ end }}
+
+<!-- Scroll behavior and animations script -->
+{{ $scrollBehavior := resources.Get "js/scroll-behavior.js" | resources.Minify }}
+<script src="{{ $scrollBehavior.RelPermalink }}"></script>
+
+<!-- GSAP for animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Horizontal scroll script -->
+{{ $horizontalScroll := resources.Get "js/horizontal-scroll.js" | resources.Minify }}
+<script src="{{ $horizontalScroll.RelPermalink }}"></script>
+
+<!-- Video loader script -->
+<script src="/js/video-loader.js"></script>

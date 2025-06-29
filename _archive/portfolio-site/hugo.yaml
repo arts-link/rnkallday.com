@@ -1,0 +1,33 @@
+baseURL: https://rnkallday.com/
+languageCode: en-us
+title: Word Nerd | A portfolio of multimedia work by Rian Kochel
+theme: word-nerd
+
+params:
+  description: A portfolio of multimedia work by Rian Kochel
+  author: Rian Kochel
+  accent_colors:
+    hero: "#000000"
+    about: "#ff0000"
+    work: "#00ff00"
+    contact: "#ffff00"
+
+build:
+  writeStats: true
+
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: content
+      target: content
+    - source: data
+      target: data
+    - source: i18n
+      target: i18n
+    - source: archetypes
+      target: archetypes

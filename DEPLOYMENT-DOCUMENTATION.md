@@ -1,53 +1,92 @@
 # Website Deployment Documentation
 
-## Issue Summary
+## ✅ DEPLOYMENT FIXED - June 28, 2025
 
-The GitHub Actions workflow file `deploy.yml` had YAML syntax issues that prevented successful automated deployments:
-- C-style comments (`//`) at the beginning of the file, which are not supported in YAML
-- Mixture of GitHub Actions v2 and v3 in different steps
+### Current Status: SUCCESSFULLY DEPLOYED
 
-## Actions Taken
+The GitHub Actions deployment issues have been **completely resolved**. The site now automatically deploys to GitHub Pages using a modern, reliable workflow.
 
-1. **Attempted to fix the GitHub Actions workflow file**:
-   - Multiple attempts were made to fix the syntax of the workflow file by removing the C-style comment and ensuring consistent action versions
-   - Due to issues with file modifications, we were unable to successfully update the workflow file
+## 🔧 Issues That Were Fixed
 
-2. **Created manual deployment scripts**:
-   - `deploy-simple.sh`: A simple script to build the Hugo site and push to gh-pages branch
-   - `deploy-force.sh`: An enhanced version that uses force push to overcome conflicts with the remote branch
-   - `deploy.sh`: A copy of the successful deployment script saved for future use
+1. **GitHub Actions Workflow Issues**:
+   - ✅ Replaced outdated workflow with modern GitHub Pages deployment
+   - ✅ Fixed YAML syntax errors and C-style comments
+   - ✅ Updated to use `actions/deploy-pages@v4` and `actions/configure-pages@v4`
+   - ✅ Implemented proper permissions (`contents: read`, `pages: write`, `id-token: write`)
 
-3. **Installed dependencies**:
-   - Installed PostCSS and related dependencies that were required for the Hugo build process:
-     - postcss
-     - postcss-cli
-     - autoprefixer
-     - tailwindcss
+2. **Dependency Management Issues**:
+   - ✅ Synchronized `package.json` and `package-lock.json`
+   - ✅ Fixed npm ci sync errors
+   - ✅ Updated to correct dependency versions
+   - ✅ Resolved security vulnerabilities with `npm audit fix`
 
-4. **Successfully deployed the website**:
-   - Built the site using Hugo
-   - Force pushed to the gh-pages branch
-   - Added the deployment script to the repository for future use
+3. **Build Configuration**:
+   - ✅ Added cache configuration to `config.toml`
+   - ✅ Simplified PostCSS and Tailwind configurations
+   - ✅ Enhanced build process with proper Hugo 0.128.0 setup
 
-## Current Status
+## 🚀 Current Deployment Process
 
-- The website has been successfully deployed to GitHub Pages (last deployment: May 21, 2025)
-- A reusable deployment script is now available in the repository as `deploy.sh`
-- A troubleshooting log has been created documenting the issues encountered and solutions attempted
+### Automated Deployment (GitHub Actions)
 
-## Future Recommendations
+The site now automatically deploys when changes are pushed to the `main` branch:
 
-1. **Fix GitHub Actions workflow file**:
-   - For automated deployments to work, the `deploy.yml` file should be properly fixed
-   - Remove the C-style comment at the top
-   - Ensure consistent GitHub Actions versions
+1. **Build Phase**:
+   - Installs Hugo 0.128.0 extended
+   - Sets up Node.js 18 with npm caching
+   - Runs `npm ci` to install dependencies
+   - Updates browserslist database
+   - Builds site with `hugo --gc --minify`
 
-2. **Regular Manual Deployments**:
-   - Until the GitHub Actions workflow is fixed, use the `deploy.sh` script for deployments:
+2. **Deploy Phase**:
+   - Uploads build artifacts to GitHub Pages
+   - Deploys using modern `actions/deploy-pages@v4`
 
-   ```bash
-   cd /Users/riankochel/rnkallday.com
-   ./deploy.sh
+### Manual Deployment (If Needed)
+
+Enhanced deployment script is available at `./deploy.sh`:
+
+```bash
+cd /Users/riankochel/GitHub/dev/rian.stuff/rnkallday.com
+./deploy.sh
+```
+
+## 📋 Technical Configuration
+
+### Workflow File: `.github/workflows/deploy.yml`
+- Uses Ubuntu latest with Hugo 0.128.0
+- Node.js 18 with npm caching
+- Proper permissions for GitHub Pages
+- Artifact upload and deployment separation
+
+### Dependencies: `package.json`
+- PostCSS: ^8.4.31
+- Tailwind CSS: ^3.3.5
+- Autoprefixer: ^10.4.16
+- PostCSS CLI: ^10.1.0
+
+### Build Configuration: `config.toml`
+- Cache configuration for images and assets
+- Build stats enabled
+- Proper cache busters for CSS/JS assets
+
+## 🎯 Recent Deployments
+
+- **June 28, 2025**: Fixed GitHub Actions deployment (Commit: `e48d770`)
+- **June 28, 2025**: Initial deployment fix (Commit: `5c75218`)
+
+## 📚 Next Steps
+
+1. **Monitor Deployments**: Check [GitHub Actions](https://github.com/arts-link/rnkallday.com/actions) for build status
+2. **Regular Updates**: Keep dependencies updated with `npm update`
+3. **Content Updates**: All content changes will automatically deploy on push to main
+
+---
+
+## 📜 Historical Issues (RESOLVED)
+
+<details>
+<summary>Previous issues that have been fixed</summary>
    ```
 
 3. **Regular Dependency Updates**:

@@ -47,21 +47,3 @@ I've washed dishes with ex-convicts, raised millions for the arts, led marketing
 I drag the skeptics across the intersection of tech and tradition so they will see with their own eyes that AI can't account for the fickle nature of style or taste, nor the fickle humans that possess it.
 
 I'm that guy with the untamed mohawk and worn-in 501s on your morning train. I'll also be that guy in a finely tailored tux at the opera tonight. That guy you swear you know from somewhere. And when you remember, you'll smile.
-
----
-
-## GitHub Spark
-
-<div align="center">
-
-<iframe
-  src="https://spark.githubnext.com/embed/66d05b64-03ec-4768-8204-7f43c46efc77"
-  width="640"
-  height="180"
-  allowtransparency="true"
-  allowfullscreen="true"
-  title="GitHub Spark"
-  style="border:none;"
-></iframe>
-
-</div>

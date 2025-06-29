@@ -118,6 +118,8 @@
       "h-auto",
       "h-full",
       "h-screen",
+      "hidden",
+      "hidden-by-default",
       "hover:-translate-y-1",
       "hover:bg-accent-600",
       "hover:bg-gray-600",

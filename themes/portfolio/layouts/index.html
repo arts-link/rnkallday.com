@@ -48,7 +48,6 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
-      loading="lazy"
       aria-label="Hero Introduction Video"
       class="w-full h-full"
     ></iframe>
@@ -62,6 +61,7 @@
     {{ end }}
     <div class="mt-8 fade-in">
       <a href="#about" class="inline-block animate-bounce">
+        <span class="sr-only">Scroll to About section</span>
         <svg class="w-10 h-10 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
@@ -318,8 +318,7 @@
             x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0 transform scale-90"
             x-transition:enter-end="opacity-100 transform scale-100"
-            class="bg-green-50 dark:bg-green-900 border-l-4 border-green-500 p-4 mb-6"
-            style="display: none;"
+            class="bg-green-50 dark:bg-green-900 border-l-4 border-green-500 p-4 mb-6 hidden-by-default"
           >
             <div class="flex">
               <div class="flex-shrink-0">
@@ -414,11 +413,10 @@
             >
               <svg
                 x-show="loading"
-                class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-900"
+                :class="{'hidden': !loading, 'inline-block': loading, 'animate-spin': true, '-ml-1': true, 'mr-3': true, 'h-5': true, 'w-5': true, 'text-gray-900': true}"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                style="display: none;"
               >
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>

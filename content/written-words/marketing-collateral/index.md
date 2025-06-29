@@ -10,7 +10,8 @@ summary = "Website copy, marketing materials, and promotional content I've creat
 +++
 
 ## Marketing Collateral
-## please [reach out to me](mailto:riankochel@gmail.com) if you don't see the examples you're looking for.
+
+## please [reach out to me](mailto:riankochel@gmail.com) if you don't see the examples you're looking for
 
 <!--more-->
 
@@ -25,23 +26,22 @@ I've had a hand in virtually every page of these websites:
 ## Ghostwriting / Bios
 
 {{< pass >}}
-<ul>
-<li><a href="https://www.greenscreens.tv/post/leading-in-crisis-an-interview-with-shawn-cutter-ceo">BIO</a></li>
-<li class="large"><a href="https://paretohealth.com/blog/dispelling-the-myths-of-self-insurance/">Blog</a></li>
-<li class="large"><a href="https://drive.google.com/file/d/1hsPgdvU72RnWHDr3ffwznjVnzz9wLLze/view?usp=sharing">fundraising appeal</a></li>
-</ul>
+
+- [BIO](https://www.greenscreens.tv/post/leading-in-crisis-an-interview-with-shawn-cutter-ceo)
+- [Blog](https://paretohealth.com/blog/dispelling-the-myths-of-self-insurance/)
+- [fundraising appeal](https://drive.google.com/file/d/1hsPgdvU72RnWHDr3ffwznjVnzz9wLLze/view?usp=sharing)
+
 {{< /pass >}}
 
 ## Misc
 
 {{< pass >}}
-<ul>
-<li><a href="https://paretohealth.com/podcast/">landing page</a></li>
-<li><a href="https://www.greenscreens.tv/post/talking-to-kids-about-underage-cannabis-use-2">blog</a></li>
-<li><a href="https://drive.google.com/file/d/1gSb47x71UZJvmZIx95NB8iFnaAR0INOs/view?usp=sharing">annual reporting</a></li>
-<li><a href="https://paretohealth.com/careers-at-paretohealth/">career page</a></li>
-<li><a href="https://paretohealth.com/wp-content/uploads/2022/10/CFO_WhitePaper_FNL.pdf">white  paper</a></li>
-<li><a href="https://paretohealth.com/wp-content/uploads/2021/02/Self-Insured-vs.-Fully-Insured-Infographic.pdf">Infographic</a></li>
-<li><a href="text/html	Sep%2028,%202020	Dec%202,%202020	2	0	2%20https:/discover.paretohealth.com/webinar/fall_webinars_2021">Webinar</a></li>
-</ul>
+
+- [landing page](https://paretohealth.com/podcast/)
+- [blog](https://www.greenscreens.tv/post/talking-to-kids-about-underage-cannabis-use-2)
+- [annual reporting](https://drive.google.com/file/d/1gSb47x71UZJvmZIx95NB8iFnaAR0INOs/view?usp=sharing)
+- [career page](https://paretohealth.com/careers-at-paretohealth/)
+- [white paper](https://paretohealth.com/wp-content/uploads/2022/10/CFO_WhitePaper_FNL.pdf)
+- [Infographic](https://paretohealth.com/wp-content/uploads/2021/02/Self-Insured-vs.-Fully-Insured-Infographic.pdf)
+- [Webinar](text/html Sep%2028,%202020 Dec%202,%202020 2 0 2%20https:/discover.paretohealth.com/webinar/fall_webinars_2021)
 {{< /pass >}}

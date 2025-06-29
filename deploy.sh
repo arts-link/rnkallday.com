@@ -1,15 +1,30 @@
-#!/bin/zsh
+#!/bin/bash
+# Enhanced deployment script
+
 set -e
 
-echo "Building site..."
-hugo --minify
+echo "🏗️  Building Hugo site..."
+hugo --gc --minify
 
-echo "Deploying to gh-pages branch using force push..."
-git checkout -b gh-pages-tmp
-git add -f public
-git commit -m "Deploy site update $(date)"
-git push -f origin `git subtree split --prefix public gh-pages-tmp`:gh-pages
-git checkout main
-git branch -D gh-pages-tmp
+echo "📦 Preparing deployment..."
+cd public
 
-echo "Deployment complete!"
+# Initialize git if not already done
+if [ ! -d .git ]; then
+    git init
+    git remote add origin https://github.com/arts-link/rnkallday.com.git
+fi
+
+# Configure git
+git config user.name "GitHub Actions"
+git config user.email "actions@github.com"
+
+# Add all files
+git add .
+git commit -m "Deploy site - $(date)"
+
+echo "🚀 Deploying to gh-pages..."
+git push --force origin HEAD:gh-pages
+
+echo "✅ Deployment complete!"
+cd ..

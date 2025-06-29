@@ -1,4 +1,3 @@
-
 baseURL = "https://rnkallday.com/"
 languageCode = "en-us"
 title = "Portfolio: Multimedia work by Rian Kochel"
@@ -93,6 +92,14 @@ ignoreLogs = ["warning-goldmark-raw-html"]
 # Build settings with cachebusters
 [build]
   writeStats = true
+
+[caches]
+  [caches.images]
+    dir = ':resourceDir/_gen'
+    maxAge = '1440m'
+  [caches.assets]
+    dir = ':resourceDir/_gen'
+    maxAge = '1440m'
 
 [[build.cachebusters]]
 source = "assets/watching/hugo_stats.json"

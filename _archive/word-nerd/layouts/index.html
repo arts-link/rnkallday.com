@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hugo Troubleshooting Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            margin: 2rem auto;
+            max-width: 700px;
+            background: #fafbfc;
+            color: #222;
+            line-height: 1.7;
+        }
+        h1, h2, h3 {
+            color: #2d3748;
+        }
+        pre, code {
+            background: #f4f4f4;
+            border-radius: 4px;
+            padding: 0.2em 0.4em;
+            font-size: 0.95em;
+        }
+        pre {
+            padding: 1em;
+            overflow-x: auto;
+        }
+        ul, ol {
+            margin-left: 1.5em;
+        }
+        section {
+            margin-bottom: 2.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hugo Troubleshooting Guide</h1>
+
+    <section>
+        <h2>CSS Processing Issues</h2>
+
+        <h3>1. Update Browserslist Database</h3>
+        <p>If you see an error message like this:</p>
+        <pre><code>ERROR POSTCSS: failed to transform "/css/main.css" (text/css): Browserslist: caniuse-lite is outdated. Please run:
+    npx update-browserslist-db@latest
+</code></pre>
+        <p>Run the following command to update the browserslist database:</p>
+        <pre><code>npx update-browserslist-db@latest</code></pre>
+
+        <h3>2. Run Hugo Server with Cache-Disabling Flags</h3>
+        <p>If you're still encountering CSS processing issues, try running the Hugo server with one or more of these flags:</p>
+        <pre><code># Disable HTTP caching (most effective)
+hugo server --noHTTPCache
+
+# Other helpful flags to try if needed
+hugo server --disableFastRender
+hugo server --ignoreCache
+hugo server --noTimes
+</code></pre>
+
+        <h3>3. Check for Syntax Errors in CSS Files</h3>
+        <p>If you see errors like:</p>
+        <pre><code>SyntaxError: Unexpected token, expected "," (35:3)
+</code></pre>
+        <p>Check your CSS files for syntax errors, particularly around the line mentioned in the error message.</p>
+
+        <h3>4. Check for Merge Conflict Markers</h3>
+        <p>Make sure there are no merge conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</code>) in your:</p>
+        <ul>
+            <li>CSS files</li>
+            <li>HTML templates</li>
+            <li>JavaScript files</li>
+            <li>Configuration files (<code>tailwind.config.js</code>, <code>postcss.config.js</code>)</li>
+        </ul>
+
+        <h3>5. Temporarily Disable PostCSS Processing</h3>
+        <p>For development purposes, you can temporarily modify your templates to bypass PostCSS processing:</p>
+        <p>In <code>themes/word-nerd/layouts/partials/head/head.html</code>, change:</p>
+        <pre><code>{{ "$css := resources.Get \"css/main.css\" | resources.PostCSS" }}</code></pre>
+        <p>To:</p>
+        <pre><code>{{ "$css := resources.Get \"css/main.css\"" }}</code></pre>
+        <p>Remember to change it back before deploying to production.</p>
+    </section>
+
+    <section>
+        <h2>Video Embed Issues</h2>
+        <ol>
+            <li>Edit <code>themes/word-nerd/layouts/index.html</code></li>
+            <li>Find the <code>iframe</code> element with the YouTube embed</li>
+            <li>Update the <code>src</code> attribute with your new YouTube video ID</li>
+            <li>Make sure to include all necessary parameters: <code>autoplay=1&amp;loop=1&amp;mute=1&amp;playsinline=1</code></li>
+        </ol>
+        <p>Example:</p>
+        <pre><code>&lt;iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&amp;loop=1&amp;mute=1&amp;playsinline=1"
+    title="Your Video Title"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; loop; mute; playsinline"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+&gt;&lt;/iframe&gt;
+</code></pre>
+    </section>
+
+    <section>
+        <h2>Viewport Meta Tag</h2>
+        <p>Ensure your site has the correct viewport meta tag in the head section:</p>
+        <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
+        <p>This is essential for responsive design and is already correctly implemented in your theme.</p>
+    </section>
+</body>
+</html>

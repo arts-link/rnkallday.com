@@ -121,54 +121,55 @@
     </header>
 
     <div class="max-w-6xl mx-auto">
-      <!-- Filter Controls -->
-      <div class="mb-12 fade-in" x-data="{ activeFilter: 'all' }">
-        <div class="flex flex-wrap justify-center gap-4">
-          <button
-            type="button"
-            @click="activeFilter = 'all'"
-            :class="activeFilter === 'all' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
-            class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
-          >
-            All Work
-          </button>
-          <button
-            type="button"
-            @click="activeFilter = 'written'"
-            :class="activeFilter === 'written' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
-            class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
-          >
-            Written
-          </button>
-          <button
-            type="button"
-            @click="activeFilter = 'audio'"
-            :class="activeFilter === 'audio' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
-            class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
-          >
-            Audio
-          </button>
-          <button
-            type="button"
-            @click="activeFilter = 'visual'"
-            :class="activeFilter === 'visual' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
-            class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
-          >
-            Visual
-          </button>
-          <button
-            type="button"
-            @click="activeFilter = 'web-archives'"
-            :class="activeFilter === 'web-archives' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
-            class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
-          >
-            Web Archives
-          </button>
+      <!-- Filter Controls and Work Grid (shared Alpine.js scope) -->
+      <div x-data="{ activeFilter: 'all' }">
+        <div class="mb-12 fade-in">
+          <div class="flex flex-wrap justify-center gap-4">
+            <button
+              type="button"
+              @click="activeFilter = 'all'"
+              :class="activeFilter === 'all' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
+              class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
+            >
+              All Work
+            </button>
+            <button
+              type="button"
+              @click="activeFilter = 'written'"
+              :class="activeFilter === 'written' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
+              class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
+            >
+              Written
+            </button>
+            <button
+              type="button"
+              @click="activeFilter = 'audio'"
+              :class="activeFilter === 'audio' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
+              class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
+            >
+              Audio
+            </button>
+            <button
+              type="button"
+              @click="activeFilter = 'visual'"
+              :class="activeFilter === 'visual' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
+              class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
+            >
+              Visual
+            </button>
+            <button
+              type="button"
+              @click="activeFilter = 'web-archives'"
+              :class="activeFilter === 'web-archives' ? 'bg-accent text-gray-900' : 'bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-700 hover:bg-gray-600 dark:hover:bg-gray-300'"
+              class="px-4 py-2 rounded-full font-medium transition-colors duration-200"
+            >
+              Web Archives
+            </button>
+          </div>
         </div>
-      </div>
 
-      <!-- Work Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-data="{ activeFilter: 'all' }">
+        <!-- Work Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{ range (where .Site.RegularPages "Section" "in" (slice "written-words" "audio-visual" "web-archives")) }}
         <div
           x-show="activeFilter === 'all' ||

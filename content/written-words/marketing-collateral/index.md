@@ -1,8 +1,8 @@
 +++
 title = 'Marketing Collateral'
 date = 2024-10-27T00:05:58-07:00
+summary = "Website copy, marketing materials, and promotional content I've created for various clients and projects."
 # draft = true
-# summary = ""
 # categories = [""]
 # tags = [""]
 # featured_image = ""

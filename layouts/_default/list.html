@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="bg-black dark:bg-white min-h-screen">
+<div class="container mx-auto px-4 py-12 pt-24">
+  <header class="mb-12 text-center">
+    <h1 class="text-4xl font-bold text-white dark:text-gray-900 mb-4 slide-down">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="text-xl text-gray-300 dark:text-gray-700 max-w-3xl mx-auto fade-in">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  <div class="max-w-4xl mx-auto">
+    <div class="grid gap-6">
+      {{ range .Pages }}
+      <article class="bg-gray-800 dark:bg-white rounded-lg p-6 hover:bg-gray-700 dark:hover:bg-gray-50 transition-colors duration-200 fade-in">
+        <div class="flex justify-between items-start">
+          <div class="flex-1">
+            <h2 class="text-xl font-semibold text-white dark:text-gray-900 mb-2">
+              <a href="{{ .Permalink }}" class="hover:text-accent transition-colors duration-200">
+                {{ .Title }}
+              </a>
+            </h2>
+            {{ with .Summary }}
+            <p class="text-gray-300 dark:text-gray-600 mb-4">{{ . | truncate 200 }}</p>
+            {{ end }}
+            <div class="flex items-center justify-between">
+              <a href="{{ .Permalink }}" class="text-accent hover:text-accent-600 font-medium transition-colors duration-200">
+                Read More →
+              </a>
+              {{ if .Date }}
+              <time class="text-sm text-gray-400 dark:text-gray-500">{{ .Date.Format "January 2, 2006" }}</time>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</div>
+</div>
+{{ end }}

@@ -9,6 +9,10 @@
 /node_modules
 /portfolio-site/node_modules
 
+# Hugo generated files
+hugo_stats.json
+.hugo_build.lock
+
 # frontmatter
 .frontmatter/
 frontmatter.json
@@ -23,3 +27,16 @@ Desktop.ini
 # Editor-specific
 .vscode/
 .idea/
+
+# NPM/Node
+package-lock.json
+yarn.lock
+.npm/
+.yarn/
+
+# Build outputs and cache
+dist/
+build/
+.cache/
+.temp/
+tmp/

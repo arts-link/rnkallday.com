@@ -1,17 +1,42 @@
-<nav>
+<nav class="fixed top-0 right-0 z-50 p-4">
   <button 
     id="btn-nav-toggle" 
+    class="relative z-50 p-2 text-white bg-black/20 backdrop-blur-sm rounded-lg hover:bg-black/40 transition-colors"
     aria-expanded="false" 
     aria-controls="nav-menu" 
     aria-label="Toggle menu">
-    <!-- copy the SVG icon markup from the CodePen here -->
-    <svg width="32" height="32" viewBox="0 0 32 32"><!-- … --></svg>
+    <!-- Hamburger menu icon -->
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+      <path d="M4 10h24v2H4zM4 15h24v2H4zM4 20h24v2H4z"/>
+    </svg>
   </button>
-  <ul id="nav-menu" aria-hidden="true">
+  <ul id="nav-menu" class="fixed top-0 right-0 h-screen w-80 max-w-full bg-gradient-to-b from-orange-600 to-orange-800 p-8 pt-20 transform translate-x-full transition-transform duration-1000 ease-out" aria-hidden="true">
+    <li style="--i: 0" class="mb-4">
+      <a href="/" class="block text-2xl font-righteous text-white hover:text-orange-200 transition-colors">
+        <span>Home</span>
+      </a>
+    </li>
     {{ range $index, $item := .Site.Menus.main }}
-      <li style="--i: {{ add $index 1 }}">
-        <a href="{{ $item.URL }}"><span>{{ $item.Name }}</span></a>
+      <li style="--i: {{ add $index 1 }}" class="mb-4">
+        <a href="{{ $item.URL }}" class="block text-2xl font-righteous text-white hover:text-orange-200 transition-colors">
+          <span>{{ $item.Name }}</span>
+        </a>
       </li>
     {{ end }}
+    <li style="--i: {{ len .Site.Menus.main | add 1 }}" class="mb-4">
+      <a href="/written-words/" class="block text-2xl font-righteous text-white hover:text-orange-200 transition-colors">
+        <span>Written Words</span>
+      </a>
+    </li>
+    <li style="--i: {{ len .Site.Menus.main | add 2 }}" class="mb-4">
+      <a href="/audio-visual/" class="block text-2xl font-righteous text-white hover:text-orange-200 transition-colors">
+        <span>Audio + Visual</span>
+      </a>
+    </li>
+    <li style="--i: {{ len .Site.Menus.main | add 3 }}" class="mb-4">
+      <a href="/web-archives/" class="block text-2xl font-righteous text-white hover:text-orange-200 transition-colors">
+        <span>Web Archives</span>
+      </a>
+    </li>
   </ul>
 </nav>

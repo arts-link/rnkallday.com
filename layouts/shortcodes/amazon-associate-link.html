@@ -1,0 +1,6 @@
+{{/* Amazon Associate Link Shortcode */}}
+{{ $asin := .Get "asin" }}
+{{ $label := .Get "button_label" }}
+<a href="https://amazon.com/dp/{{ $asin }}" target="_blank" rel="nofollow noopener" class="inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 transition-colors">
+  {{ $label }}
+</a>

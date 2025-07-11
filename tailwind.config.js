@@ -1,13 +1,14 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./themes/**/layouts/**/*.html",
-    "./content/**/*.{html,js}",
-    "./layouts/**/*.html",
-    "./static/**/*.js"
+    './layouts/**/*.html',
+    './assets/js/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        righteous: ['Righteous', 'cursive'],
+      },
+    },
   },
   plugins: [],
-}
+};

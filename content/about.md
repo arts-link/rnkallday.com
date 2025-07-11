@@ -35,9 +35,6 @@ skills:
       level: 90
     - name: "HTML/CSS"
       level: 70
-menu:
-  main:
-    weight: 2
 ---
 
 Howdy, I'm Rian Kochel. I tell stories. Sometimes I use words, other times I use music, or both. Often times I'll use my hands, but every time I use intention.

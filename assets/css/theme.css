@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CodePen variables & custom styles */
+@layer demo {
+  :root {
+    --_nav-f-family: "Righteous", cursive;
+    --_nav-btn-clr: #222;
+    --_nav-btn-clr-hover: rgb(254, 154, 0);
+    --_nav-bg-open: rgb(137, 75, 0);
+    --_nav-panel-border-radius: 30px;
+    --_nav-panel-transition-duration: 1000ms;
+    /* Copy any other CSS variables from the CodePen :root here */
+  }
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    /* Include any ::before / ::after decorations from the CodePen */
+  }
+  nav > ul {
+    transform: translateX(100%);
+    transition: transform var(--_nav-panel-transition-duration)
+      cubic-bezier(0.86, 0, 0.672, 1.003);
+  }
+  nav > ul.open {
+    transform: translateX(0);
+  }
+  
+  /* Optionally add a backdrop behind the menu */
+  nav::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  nav > ul.open ~ nav::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  nav li {
+    list-style: none;
+    margin: 1rem 0;
+    /* Add remaining li styles from CodePen */
+  }
+}

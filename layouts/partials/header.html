@@ -1,0 +1,17 @@
+<nav>
+  <button 
+    id="btn-nav-toggle" 
+    aria-expanded="false" 
+    aria-controls="nav-menu" 
+    aria-label="Toggle menu">
+    <!-- copy the SVG icon markup from the CodePen here -->
+    <svg width="32" height="32" viewBox="0 0 32 32"><!-- … --></svg>
+  </button>
+  <ul id="nav-menu" aria-hidden="true">
+    {{ range $index, $item := .Site.Menus.main }}
+      <li style="--i: {{ add $index 1 }}">
+        <a href="{{ $item.URL }}"><span>{{ $item.Name }}</span></a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

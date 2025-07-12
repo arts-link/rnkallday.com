@@ -1,16 +1,14 @@
 module.exports = {
   content: [
-    './layouts/**/*.html',
-    './content/**/*.md',
-    './assets/js/**/*.js',
-    './themes/**/layouts/**/*.html'
+    "./layouts/**/*.html",
+    "./assets/js/**/*.js"
   ],
   theme: {
     extend: {
       fontFamily: {
-        righteous: ['Righteous', 'cursive'],
-      },
-    },
+        righteous: ["Righteous", "cursive"]
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };

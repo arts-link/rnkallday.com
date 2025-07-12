@@ -2,30 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom navigation styles */
-@layer components {
-  .nav-menu-open {
-    transform: translateX(0) !important;
+@layer demo {
+  :root {
+    --_nav-f-family: "Righteous", cursive;
+    --_nav-btn-clr: #222;
+    --_nav-btn-clr-hover: rgb(254,154,0);
+    --_nav-bg-open: rgb(137,75,0);
+    --_nav-panel-border-radius: 30px;
+    --_nav-panel-transition-duration: 1000ms;
+    /* …other CodePen variables… */
   }
-  
-  /* Smooth scrolling for anchor links */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Hero video overlay */
-  .hero-overlay {
-    background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
-  }
-}
-
-/* Animation delays for menu items */
-@layer utilities {
-  [style*="--i:0"] { animation-delay: 0ms; }
-  [style*="--i:1"] { animation-delay: 100ms; }
-  [style*="--i:2"] { animation-delay: 200ms; }
-  [style*="--i:3"] { animation-delay: 300ms; }
-  [style*="--i:4"] { animation-delay: 400ms; }
-  [style*="--i:5"] { animation-delay: 500ms; }
-  [style*="--i:6"] { animation-delay: 600ms; }
+  nav { position:absolute; top:0; right:0; padding:1rem; /* … */ }
+  nav > ul { transform:translateX(100%); transition:transform var(--_nav-panel-transition-duration) cubic-bezier(0.86,0,0.672,1.003); }
+  nav > ul.open { transform:translateX(0); }
+  nav li { list-style:none; margin:1rem 0; }
+  nav a span { font-family:var(--_nav-f-family); font-size:1.5rem; color:var(--_nav-btn-clr); transition:color .3s ease; }
+  nav a:hover span { color:var(--_nav-btn-clr-hover); }
+  /* …other CodePen component styles… */
 }

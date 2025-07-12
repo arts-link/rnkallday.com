@@ -1,23 +1,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-
 <!-- Righteous font -->
-<link 
-  href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" 
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"/>
 
-<!-- Site CSS (Tailwind + custom) -->
-{{/* Build theme.css via Hugo's resources.Pipeline with Tailwind */}}
 {{ $styles := resources.Get "css/theme.css" | css.TailwindCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 
-<!-- GSAP for animations -->
-<script 
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" 
-  integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" 
-  crossorigin="anonymous" 
-  referrerpolicy="no-referrer"
-></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>

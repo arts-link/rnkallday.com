@@ -3,4 +3,5 @@
   publish = "public"
 
 [context.production]
+  branch = "main"
   environment = { HUGO_ENV = "production" }

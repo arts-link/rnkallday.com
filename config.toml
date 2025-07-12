@@ -1,5 +1,5 @@
 baseURL = "https://rnkallday.com/"
-languageCode = "en-us"
+languageCode = "en"
 title = "Portfolio: Multimedia work by Rian Kochel"
 # theme = "portfolio"  # Temporarily disabled to use custom layouts
 summaryLength = 15
